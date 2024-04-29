@@ -1,5 +1,5 @@
 .navbar-lewagon {
-  justify-content: space-between;
+  justify-content: center;
   background: white;
 }
 
@@ -7,6 +7,9 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.logo {
+  border-radius: 180px;
+  width: 200px;
 }
+
+
