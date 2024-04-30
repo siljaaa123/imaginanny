@@ -1,2 +1,10 @@
 <h1>Characters#show</h1>
 <p>I am <%= @character.character_name %> </p>
+
+
+<%= @character.description %>
+<%= @character.category %>
+<%= @character.price %>
+
+<%= render "bookings/form", booking: @booking %>
+
