@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_30_093403) do
     t.index ["character_id"], name: "index_bookings_on_character_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
-  
+
   create_table "characters", force: :cascade do |t|
     t.string "character_name"
     t.string "category"
@@ -54,6 +54,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_30_093403) do
 
   add_foreign_key "bookings", "characters"
   add_foreign_key "bookings", "users"
-
   add_foreign_key "characters", "users"
 end
