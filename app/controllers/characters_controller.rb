@@ -3,6 +3,7 @@ class CharactersController < ApplicationController
 
   def index
     @characters = Character.all
+    filter_characters
   end
 
   def new
@@ -32,5 +33,12 @@ class CharactersController < ApplicationController
 
   def character_params
     params.require(:character).permit(:category, :description, :character_name, :price, :user_id)
+  end
+
+  def filter_characters
+    if params[:filter].present?
+      @characters = @characters.where(category: params[:filter][:category]) if params[:filter][:category].present?
+      @characters = @characters.where("price <= ?", params[:filter][:max_price]) if params[:filter][:max_price].present?
+    end
   end
 end
