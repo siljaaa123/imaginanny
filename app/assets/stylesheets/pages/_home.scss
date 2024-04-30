@@ -1,1 +1,50 @@
 // Specific CSS for your home-page
+
+.banner {
+  background-color: #3E8767;
+  text-align: center;
+  height: 80vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-family: $headers-font;
+
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: #C7F0BD;
+}
+.banner p {
+  font-size: 24px;
+  font-weight: lighter;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+.border-radius {
+  border-radius: 10px;
+}
+
+.title-index-padding {
+  padding-bottom: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+
+  .card {
+    border: 1px solid black;
+
+  }
+}
