@@ -1,0 +1,46 @@
+/* Navbar container */
+.navbar {
+  background-color: #6CAC90; /* Change to desired background color */
+}
+
+/* Brand logo */
+.navbar-brand img.logo {
+  max-height: 40px; /* Adjust the logo size as needed */
+  border-radius: 50%;
+
+}
+
+/* Navigation links */
+.navbar-nav .nav-link {
+  color: #333333; /* Change link color */
+}
+
+.navbar-nav .nav-link:hover {
+  color: $tea; /* Change link hover color */
+}
+
+/* Toggler icon color */
+.navbar-toggler-icon {
+  background-color: #333333; /* Change toggler icon color */
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  background-color: #ffffff; /* Change dropdown menu background color */
+}
+
+.dropdown-menu .dropdown-item {
+  color: #333333; /* Change dropdown item color */
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f8f9fa; /* Change dropdown item hover background color */
+}
+
+/* User avatar */
+.avatar {
+  max-width: 40px; /* Adjust avatar size as needed */
+  border-radius: 50%; /* Make avatar round */
+  display: block; /* Ensures the image behaves as a block element */
+  margin: 0 auto;
+}

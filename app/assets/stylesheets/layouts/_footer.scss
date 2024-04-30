@@ -1,0 +1,44 @@
+footer {
+  background-color: #3E8767;
+  padding: 8px 0;
+  margin-top: 35px;
+  font-family: $body-font;
+}
+
+.card { background-color: #3E8767;
+  border-style: none;
+}
+
+.container {
+  width: 1170px;
+
+
+}
+
+
+footer ul {
+  margin-top: 10px;
+}
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+
+footer p {
+  margin-top: 17px;
+}
+
+footer a {
+  color: black;
+  transition: color 0.5s ease;
+}
+
+footer a:hover {
+  color: #C7F0BD;
+}
+
+p {
+margin: 0 0 10px;
+}
