@@ -21,7 +21,7 @@
             <% @characters.each do |character| %>
             <div class="col-md-4">
               <div class="cards mb-4">
-              <img src="<%= character.photo %>" class="card-img-top img-fluid" alt="<%= character.character_name %>">
+              <img src="<%= character.photo.url %>" class="card-img-top img-fluid" alt="<%= character.character_name %>">
               <div class="card-body">
                 <h5 class="card-title"><%= character.character_name %></h5>
                 <p class="card-text"><%= character.category %></p>
