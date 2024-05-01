@@ -14,12 +14,14 @@
   <% if @characters.any? %>
     <div class="cards">
       <% @characters.each do |character| %>
-        <div class="cards">
-          <%= character.character_name %>
-          <%= character.category %>
-          <%= character.description %>
-          <%= character.price %>
-        </div>
+        <%= link_to character_path(character) do %>
+          <div class="card">
+              <%= character.character_name %>
+              <%= character.category %>
+              <%= character.description %>
+              <%= character.price %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   <% else %>
