@@ -1,6 +1,6 @@
 <div class="container">
-  <h1>Dashboards#index</h1>
-  <p>Find me in app/views/dashboards/index.html.erb</p>
+  <h1>My Profile</h1>
+
   <ul class="nav nav-pills" data-controller="toggle">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="#" data-action="click->toggle#tab">My infos</a>
@@ -35,4 +35,5 @@
       </div>
     </li>
   </ul>
+  <%= render "devise/registrations/cancel" %>
 </div>
