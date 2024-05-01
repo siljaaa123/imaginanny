@@ -30,7 +30,7 @@ gem "devise"
 
 gem "cloudinary"
 
-gem 'faker'
+gem "faker"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

@@ -24,6 +24,7 @@ user = User.create!(
   address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + "Little Hangleton" # Dark and mysterious address
 )
 # Seed data for Voldemort character
+
 character = Character.new(
   character_name: "Lord Voldemort",
   category: "Villains",
