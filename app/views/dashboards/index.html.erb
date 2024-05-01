@@ -4,8 +4,13 @@
     <%=image_tag "mother.jpeg", class:"profile"%>
   </div>
 <div class="container">
+
 <h1>My Profile</h1>
   <p></p>
+
+  <h1>My Profile</h1>
+
+
   <ul class="nav nav-pills" data-controller="toggle">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="#" data-action="click->toggle#tab" id="details">My Details</a>
@@ -44,4 +49,5 @@
       </div>
     </li>
   </ul>
+  <%= render "devise/registrations/cancel" %>
 </div>
