@@ -1,10 +1,22 @@
-<h1>Characters#show</h1>
-<p>I am <%= @character.character_name %> </p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My character</title>
+</head>
 
-
-<%= @character.description %>
-<%= @character.category %>
-<%= @character.price %>
-
+<body>
+  <div class="container">
+    <h1 class="mt-5 mb-5">New sitter</h1>
+    <div>
+      <p>I am <strong><%= @character.character_name %></strong> </p>
+      <p><strong>Description: </strong></p>
+      <p><%= @character.description %></p>
+      <p><strong>Category:</strong></p>
+      <p><%= @character.category %></p>
+      <p><strong>Price:</strong></p>
+      <p><%= @character.price %>€/hour</p>
+    </div>
 <%= render "bookings/form", booking: @booking %>
-
+  </div>
+</body>
+</html>

@@ -1,2 +1,20 @@
 @import "footer";
 @import "navbar";
+
+.card-image {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+h1 {
+  font-family: $headers-font;
+}
+
+p {
+  font-family: $body-font;
+}
+
+h4 {
+  font-family: $headers-font;
+}

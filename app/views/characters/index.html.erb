@@ -1,30 +1,42 @@
-<h1>Characters#index</h1>
-<p>Find me in app/views/characters/index.html.erb</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Looking for an imaginnany!</title>
+</head>
 
+<body>
+  <div class="container">
+    <h1 class="mt-5">Looking for an imaginanny!</h1>
+    <p>Filter your research by category and price.</p>
+    <%= simple_form_for :filter, url: characters_path, method: :get do |f| %>
+      <%= f.input :category, collection: %w[Villains Disney Pixar Marvel DC Action Books Family] %>
+      <%= f.input :max_price, input_html: {placeholder: "Max price"} %>
+      <%= f.submit "Filter", class:"btn" %>
+    <% end %>
 
-<div class="container">
-  <%= simple_form_for :filter, url: characters_path, method: :get do |f| %>
-    <%= f.input :category, collection: %w[Villains Disney Pixar Marvel DC Action Books Family] %>
-    <%= f.input :max_price, input_html: {placeholder: "Max price"} %>
-    <%= f.submit "Filter" %>
-  <% end %>
-
-  <%# Displaying the characters %>
-
-  <% if @characters.any? %>
-    <div class="cards">
-      <% @characters.each do |character| %>
-        <%= link_to character_path(character) do %>
-          <div class="card">
-              <%= character.character_name %>
-              <%= character.category %>
-              <%= character.description %>
-              <%= character.price %>
+    <%# Displaying the characters %>
+    <div class="mt-5">
+      <% if @characters.any? %>
+        <div class="row">
+            <% @characters.each do |character| %>
+            <div class="col-md-4">
+              <div class="cards mb-4">
+              <img src="<%= character.image_url %>" class="card-img-top img-fluid" alt="<%= character-character_name %>%>">
+              <div class="card-body">
+                <h5 class="card-title"><%= character.character_name %></h5>
+                <p class="card-text"><%= character.category %></p>
+                <p class="card-text"><%= character.description %></p>
+                <p class="card-text"><%= character.price %></p>
+              </div>
+              </div>
+            </div>
           </div>
-        <% end %>
+          <% end %>
+          </div>
+      <% else %>
+        <h4>No characters found.</h4>
       <% end %>
     </div>
-  <% else %>
-    <h4>No characters found.</h4>
-  <% end %>
-</div>
+  </div>
+</body>
+</html>
