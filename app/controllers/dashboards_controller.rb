@@ -6,8 +6,8 @@ class DashboardsController < ApplicationController
   def index
     @user = User.find(current_user.id)
     @character = @user.character
-    @bookings = Booking.where(character: @character)
-    @my_bookings = Booking.where(user: current_user)
+    @my_bookingsbookings = Booking.where(character: @character)
+    @bookings = Booking.where(user: current_user)
   end
 
   def profile
