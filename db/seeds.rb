@@ -1,8 +1,7 @@
 # You need the images folder and its path
 
 # Then define file_path
-file_path = "/Users/mariadelmarsevillaescobar/Desktop/"
-
+file_path = "/Users/lucyhollingsworth/Desktop/"
 
 require 'open-uri'
 
@@ -2324,4 +2323,3 @@ character.photo.attach(io: File.open("#{file_path}w.webp"), filename: 'image.jpg
 character.save!
 
 puts 'Finished'
-
