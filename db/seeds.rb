@@ -1,6 +1,7 @@
 # You need the images folder and its path
+
 # Then define file_path
-file_path = "/Users/oceane/Downloads/"
+file_path = "/Users/lucyhollingsworth/Desktop/"
 
 require 'open-uri'
 
@@ -25,7 +26,7 @@ character = Character.new(
   price: 25,
   user_id: user.id
 )
-character.photo.attach(io: File.open("#{file_path}default.jpg"), filename: 'image.jpg')
+character.photo.attach(io: File.open("#{file_path}drama.webp"), filename: 'image.jpg')
 character.save!
 
 addams_user = User.create!(
@@ -44,8 +45,9 @@ addams_family = Character.new(
   price: 40,
   user_id: addams_user.id
 )
-addams_family.photo.attach(io: File.open("#{file_path}w.webp"), filename: 'image.jpg')
+addams_family.photo.attach(io:File.open("#{file_path}drama.webp"), filename: 'image.jpg')
 addams_family.save!
+
 
 hsm_user = User.create!(
   email: Faker::Internet.email,

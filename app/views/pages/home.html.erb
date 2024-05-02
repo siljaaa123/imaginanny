@@ -4,145 +4,48 @@
   <!-- Include your CSS and other header content here -->
 </head>
 <body>
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.4) 50%);">
-  <div class="banner-content">
-   <%= image_tag "nanny_logo.jpg", class: "logo_banner" %>
-<h1>Imaginanny</h1>
-    <p>Enchanted Care for your Little One</p>
 
-  <%# <div class="search-bar">
-    <form action="/beds" class="form-inline padded">
-      <input type="text" class="form-control border-radius input-lg" placeholder="Paris">
-      </select>
-      <input type="submit" class="btn btn-lg" value="Search">
-
-    </form>
-  </div> %>
-  <a href="characters"><button class="character_btn_search">All Characters</button></a>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner banners">
+    <div class="carousel-item active">
+      <%= image_tag("banner1.png") %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("banner2.png") %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("banner3.png") %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("banner4.png") %>
+    </div>
   </div>
 </div>
+
+
+
+
 <div class = "container">
+<div class ="text">
+<p>Popular Searches</p>
+</div>
   <div class="row">
-          <div class="cardContainer">
-            <div class="card">
+      <div class="cardContainer">
+      <% @random_characters.each do |character| %>
+          <div class="card col-lg-4">
             <div class="card-image"
                 style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-                <img src="https://res.cloudinary.com/djvyamesz/image/upload/v1714148721/development/uhxvtv9yjdtmrjoek6adbuve8ahj.avif" class="image">
-              <div class="card-first-name"></div>
+            <%= image_tag character[:photo], height: 250 %>
             </div> <!-- fin card-image -->
               <div class="card-description">
-                       <p><strong id="name">Mary Poppins</strong></p>
-                <p id="price">£100p/h</p>
-                <p id="description">Treat your little one to a spoonful of sugar at bedtime, Mary can deal with it.</p>
+                       <p><strong id="name"><td><%= character[:character_name]%></td></strong></p>
+                <p><td><%= character[:price]%></td></p>
               </div>
               <div class="card-price">
-                <h2></h2>
-              </div> <!-- fin card-price -->
-            </div> <!-- fin card -->
-            <div class="card">
-            <div class="card-image"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-                <img src="https://cdn.gencraft.com/prod/user/e3cfb35c-9525-44cf-ac11-2b2b264dce11/5b194f51-6463-4a0c-b000-1f1ead7f30f5/image/image1_0.jpg?Expires=1714568561&Signature=aemnyj5aSR7kuNFItU6oLRC8t8i8HoN9ea2zb0Yy6wftBFhiv~dfMSrIFbx5-2soTgSW5ShEO8FEvSw5O7JCEvQuHRWABjFMDJ5iaU~8ZF2CUETdWnYlycmAophqod1W7yb~ULp8Xvg9g2FVy4ToEFYNLB~hS4ZC0w6fL-oj-150O5etHTl2EsdGXksmh0ZPSmSHIeV1EASrBU1KRkPsmtRL0lGcAVsnVnaulNLc3tEi8a8giTPtru~s4tDc~jhWApx1KRxYWCcnVkmo9YptpxPeo4CXhXuo9nMAPg9nL0~M7o-uqXQj9MT0JypFlqcjzVde67OHgf2fjNMi7n3oIw__&Key-Pair-Id=K3RDDB1TZ8BHT8" class="image">
-              <div class="card-first-name"></div>
-            </div> <!-- fin card-image -->
-              <div class="card-description">
-                       <p><strong id="name">Batman</strong></p>
-                <p id="price">£80p/h</p>
-                <p id="description">I can take care of your child as <strong>I am Batman</strong></p>
               </div>
-              <div class="card-price">
-                <h2></h2>
-              </div> <!-- fin card-price -->
-            </div> <!-- fin card -->
-            <div class="card">
-            <div class="card-image"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-                <img src="https://cdn.gencraft.com/prod/user/e3cfb35c-9525-44cf-ac11-2b2b264dce11/a2b99d21-ebbd-43ef-b426-b9e14711a71a/image/image0_0.jpg?Expires=1714568446&Signature=T8Rj34Qp2c6E54T4Et3ewA1zNaGHJcuquEYZ2jzS-3oXXViXuaH9Xv82tmUoUS7NGnpp8fGGOnKjHkoGV0EjGSAggArUq8i29fvyr-zuzBJcCv1Pd5-BQ7YfVh6UxEw1PuwZW7yP7nyDbQjm-pd~5iQxJztllOxuCpAUcfImUo7LDHa8qtrWDq3cxLUvPjJqSdhDj4Y1O9um3XKcYarVyAxEPvOGuG1EBp3XnPmX~zWLcVuh4At0j-R0MjYTNfQ~22o7huhxSgbWI-yYG0LWWndhOk51JlIxX3RhTumGS~Zqq1KHgUsK8Guf4Q-0oomr5YvPH0fW3ZTCVjxni0k37A__&Key-Pair-Id=K3RDDB1TZ8BHT8" class="image">
-              <div class="card-first-name"></div>
-            </div> <!-- fin card-image -->
-              <div class="card-description">
-                       <p><strong id="name">Thanos</strong></p>
-                <p id="price">£15p/h</p>
-                <p id="description">One snap from Thanos and your child will nap</p>
-              </div>
-              <div class="card-price">
-                <h2></h2>
-              </div> <!-- fin card-price -->
-            </div> <!-- fin card -->
-            <div class="card">
-            <div class="card-image"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-                <img src="https://cdn.gencraft.com/prod/user/e3cfb35c-9525-44cf-ac11-2b2b264dce11/e2a7cf78-ca46-4529-bc03-2c07f3c98705/image/image1_0.jpg?Expires=1714567615&Signature=nTIXWwIc7fsl5PpIksZ30RYFhJx0-SIgvPm-oWbJ8Fti5eEcsOymG~tmrUnQBWz0xOUbyf3pfsBqPdHOwO884SdaP5IZttAJS322cgnGEWd7vJ0ZizwUwq6YsdwEbbTD0r74sOJDAEcKrabcdFKqGh51N~tpvy39iCVLuZNOdajiO5ofjs-~ZdFlFvF4tPk~-FjEibCnni5GR~X6DZe8DtkKmgzR2J8CvLiTyhelXcgu2PABV8seY8pn0ajAYo-Zirbq49hjPiOik3Hfl0wa9PnmXLL4-mBFpci8Ya7FZ6r~w6q-zmwkPocxUTkHrpSCYPqY72-F-n2f~D0qhPfw2Q__&Key-Pair-Id=K3RDDB1TZ8BHT8" class="image">
-              <div class="card-first-name"></div>
-            </div> <!-- fin card-image -->
-              <div class="card-description">
-                       <p><strong id="name">Voldemort</strong></p>
-                <p id="price">£5p/h</p>
-                <p id="description">He who must not be named is ready to "look after" the new chosen one</p>
-              </div>
-              <div class="card-price">
-                <h2></h2>
-              </div> <!-- fin card-price -->
+
             </div>
-                  <div class="card">
-            <div class="card-image"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/msdadfa_ec029.jpg?crop=0.5625xw:1xh;center,top&resize=640:*" class="image">
-              <div class="card-first-name"></div>
-            </div> <!-- fin card-image -->
-              <div class="card-description">
-                       <p><strong id="name">The Addams Family</strong></p>
-                <p id="price">£20p/h</p>
-                <p id="description">A chance for your child to be welcomed into a close-knit family, who have plenty of toys - just check out their guillotine!</p>
-              </div>
-              <div class="card-price">
-                <h2></h2>
-              </div> <!-- fin card-price -->
-            </div>
-                  <div class="card">
-            <div class="card-image"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-                <img src="https://i.pinimg.com/474x/cb/24/59/cb245955ebd35b869e00d7bc208c3e88.jpg" class="image">
-              <div class="card-first-name"></div>
-            </div> <!-- fin card-image -->
-              <div class="card-description">
-                       <p><strong id="name">Donkey & Dragon</strong></p>
-                <p id="price">£40p/h</p>
-                <p id="description">Perfect for a child who loves to listen, and eat waffles</p>
-              </div>
-              <div class="card-price">
-                <h2></h2>
-              </div> <!-- fin card-price -->
-            </div>
-                  <div class="card">
-            <div class="card-image"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-                <%= image_tag "Yzma.jpeg", class: "image"%>
-              <div class="card-first-name"></div>
-            </div> <!-- fin card-image -->
-              <div class="card-description">
-                       <p><strong id="name">Yzma & Kronk</strong></p>
-                <p id="price">£90p/h</p>
-                <p id="description">Kronk will do all the work and all the playing, don't worry</p>
-              </div>
-              <div class="card-price">
-                <h2></h2>
-              </div> <!-- fin card-price -->
-            </div>
-                  <div class="card">
-            <div class="card-image"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-                <%= image_tag "aragorn.webp", class: "image"%>
-              <div class="card-first-name"></div>
-            </div> <!-- fin card-image -->
-              <div class="card-description">
-                <p><strong id="name">Aragorn</strong></p>
-                <p id="price">£10p/h</p>
-                <p id="description">Will guard your child with his life, also bonus he might sing to it in elvish</p>
-              </div>
-              <div class="card-price">
-                <h2></h2>
-              </div> <!-- fin card-price -->
+ <% end %>
             </div>
 </div>
 </div>

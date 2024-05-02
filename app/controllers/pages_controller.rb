@@ -7,5 +7,6 @@ class PagesController < ApplicationController
       character = Character.all.sample
       @random_characters << { character_name: character.character_name, description: character.description.lines('.').first, price: character.price, photo: character.photo.url }
     end
+
   end
 end
