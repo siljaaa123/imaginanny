@@ -4,13 +4,33 @@
   <!-- Include your CSS and other header content here -->
 </head>
 <body>
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.4) 50%);">
+
+
+<%# <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.4) 50%);">
   <div class="banner-content">
    <%= image_tag "nanny_logo.jpg", class: "logo_banner" %>
-<h1>Imaginanny</h1>
+    <%# <h1>Imaginanny</h1>
     <p>Enchanted Care for your Little One</p>
   </div>
+</div>  %>
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner banners">
+    <div class="carousel-item active">
+      <%= image_tag("banner1.png") %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("banner2.png") %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("banner3.png") %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("banner4.png") %>
+    </div>
+  </div>
 </div>
+
 <div class = "container">
   <div class="row">
           <div class="cardContainer">
