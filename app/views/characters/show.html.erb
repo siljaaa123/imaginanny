@@ -8,6 +8,7 @@
   <div class="container">
     <h1 class="mt-5 mb-5">New sitter</h1>
     <div>
+      <%= image_tag @character.photo.url, height: 250 %>
       <p>I am <strong><%= @character.character_name %></strong> </p>
       <p><strong>Description: </strong></p>
       <p><%= @character.description %></p>

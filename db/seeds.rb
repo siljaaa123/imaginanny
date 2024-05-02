@@ -1,12 +1,7 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# You need the images folder and its path
+# Then replace this /Users/oceane/Downloads
+# with the images path
+
 require 'open-uri'
 
 puts 'Cleaning database...'
@@ -15,84 +10,80 @@ User.destroy_all
 puts 'Creating characters and users...'
 
 user = User.create!(
-  email: Faker::Internet.email,
-  password: "password", # You can set a default password here
+  email: 'voldemort@gmail.com',
+  password: "password",
   password_confirmation: "password",
-  first_name: "Tom", # First name related to the character
-  last_name: "Riddle", # Last name related to the character
-  phone_nr: Faker::PhoneNumber.phone_number, # Random phone number
-  address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + "Little Hangleton" # Dark and mysterious address
+  first_name: "Tom",
+  last_name: "Riddle",
+  phone_nr: Faker::PhoneNumber.phone_number,
+  address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + "Little Hangleton"
 )
-# Seed data for Voldemort character
-
 character = Character.new(
-  character_name: "A Lord Voldemort",
+  character_name: "Lord Voldemort",
   category: "Villains",
   description: "Treat your little one to a taste of dark magic with Lord Voldemort! Known for his expertise in the Dark Arts, Voldemort offers a unique babysitting experience that will leave your child spellbound. With a background in wizardry and a knack for mischief, Voldemort is perfect for children who enjoy a bit of adventure. Despite his dark reputation, rest assured that your child's safety is his top priority. Let Voldemort take care of your little wizard or witch and watch as they embark on magical adventures together!",
   price: 25,
   user_id: user.id
 )
-character.photo.attach(io: URI.open("https://res.cloudinary.com/djvyamesz/image/upload/v1714576416/Image20240501171305_ztmesa.png"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/default.jpg"), filename: 'image.jpg')
 character.save!
 
 addams_user = User.create!(
   email: Faker::Internet.email,
-  password: "password", # You can set a default password here
+  password: "password",
   password_confirmation: "password",
-  first_name: "Morticia", # First name linked to the character
-  last_name: "Addams", # Last name related to the character
-  phone_nr: Faker::PhoneNumber.phone_number, # Random phone number
-  address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + "Spooky Manor" # Dark and mysterious address
+  first_name: "Morticia",
+  last_name: "Addams",
+  phone_nr: Faker::PhoneNumber.phone_number,
+  address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + "Spooky Manor"
 )
-# Seed data for Addams Family character
 addams_family = Character.new(
   character_name: "Addams Family",
   category: "Family",
   description: "Welcome to the Addams Family! With their quirky and macabre charm, this eccentric family is ready to entertain and care for your little ones. From Morticia's elegance to Wednesday's dark humor and Gomez's enthusiasm, your child will experience a babysitting adventure like no other. Treat your child to a spooky yet delightful time with the Addams Family!",
-  price: 40, # Price can vary based on the complexity of the character and their childcare experience
-  user_id: addams_user.id # Associate the user with the character
+  price: 40,
+  user_id: addams_user.id
 )
-addams_family.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+addams_family.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 addams_family.save!
 
 hsm_user = User.create!(
   email: Faker::Internet.email,
-  password: "password", # You can set a default password here
+
+  password: "password",
   password_confirmation: "password",
-  first_name: "Sharpay", # First name linked to the character
-  last_name: "Evans", # Last name related to the character
-  phone_nr: Faker::PhoneNumber.phone_number, # Random phone number
-  address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + "East High" # Address related to the character
+  first_name: "Sharpay",
+  last_name: "Evans",
+  phone_nr: Faker::PhoneNumber.phone_number,
+  address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + "East High"
 )
-# Seed data for Ryan and Sharpay character
 ryan_sharpay = Character.new(
   character_name: "Ryan and Sharpay",
   category: "Family",
   description: "Introducing Ryan and Sharpay from High School Musical! With their love for music, dance, and all things glamorous, this dynamic duo will turn babysitting into a fabulous performance your child won't forget. Whether it's singing, dancing, or styling, Ryan and Sharpay will make sure your child feels like a star!",
-  price: 45, # Price can vary based on the complexity of the character and their childcare experience
-  user_id: hsm_user.id # Associate the user with the character
+  price: 45,
+  user_id: hsm_user.id
 )
-ryan_sharpay.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+ryan_sharpay.photo.attach(io: File.open("/Users/oceane/Downloads/drama.webp"), filename: 'image.jpg')
 ryan_sharpay.save!
 
 shrek_user = User.create!(
   email: Faker::Internet.email,
-  password: "password", # You can set a default password here
+  password: "password",
   password_confirmation: "password",
-  first_name: "Donkey", # First name linked to the character
-  last_name: "Shrek", # Last name related to the character
-  phone_nr: Faker::PhoneNumber.phone_number, # Random phone number
-  address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + "Far Far Away" # Address related to the character
+  first_name: "Donkey",
+  last_name: "Shrek",
+  phone_nr: Faker::PhoneNumber.phone_number,
+  address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + "Far Far Away"
 )
-# Seed data for Donkey and Dragon character
 donkey_dragon = Character.new(
   character_name: "Donkey and Dragon",
   category: "Family",
   description: "Get ready for a magical babysitting experience with Donkey and Dragon from the Shrek universe! Donkey brings endless chatter and infectious energy, while Dragon adds a touch of fire-breathing excitement. Together, they'll keep your child entertained and safe on an adventure they'll never forget!",
-  price: 30, # Price can vary based on the complexity of the character and their childcare experience
-  user_id: shrek_user.id # Associate the user with the character
+  price: 30,
+  user_id: shrek_user.id
 )
-donkey_dragon.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+donkey_dragon.photo.attach(io: File.open("/Users/oceane/Downloads/classics.webp"), filename: 'image.jpg')
 donkey_dragon.save!
 
 user_thanos = User.create!(
@@ -145,8 +136,6 @@ user_aragorn = User.create!(
   address: Faker::Address.full_address
 )
 
-# Seed data for characters
-# Each character is associated with its respective user
 thanos = Character.new(
   character_name: "Thanos",
   category: "Villains",
@@ -154,7 +143,7 @@ thanos = Character.new(
   price: 35,
   user_id: user_thanos.id
 )
-thanos.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+thanos.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 thanos.save!
 
 mary_poppins = Character.new(
@@ -164,7 +153,7 @@ mary_poppins = Character.new(
   price: 40,
   user_id: user_mary_poppins.id
 )
-mary_poppins.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+mary_poppins.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 mary_poppins.save!
 
 batman = Character.new(
@@ -174,7 +163,7 @@ batman = Character.new(
   price: 45,
   user_id: user_batman.id
 )
-batman.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+batman.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 batman.save!
 
 yzma_kronk = Character.new(
@@ -184,7 +173,7 @@ yzma_kronk = Character.new(
   price: 30,
   user_id: user_yzma_kronk.id
 )
-yzma_kronk.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+yzma_kronk.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 yzma_kronk.save!
 
 aragorn = Character.new(
@@ -194,7 +183,7 @@ aragorn = Character.new(
   price: 50,
   user_id: user_aragorn.id
 )
-aragorn.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+aragorn.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 aragorn.save!
 
 user_lilo_stitch = User.create!(
@@ -237,7 +226,6 @@ user_cobra = User.create!(
   address: Faker::Address.full_address
 )
 
-# Seed data for characters
 lilo_stitch = Character.new(
   character_name: "Lilo and Stitch",
   category: "Family",
@@ -245,7 +233,7 @@ lilo_stitch = Character.new(
   price: 40,
   user_id: user_lilo_stitch.id
 )
-lilo_stitch.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+lilo_stitch.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 lilo_stitch.save!
 
 nani = Character.new(
@@ -255,7 +243,7 @@ nani = Character.new(
   price: 35,
   user_id: user_nani.id
 )
-nani.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+nani.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 nani.save!
 
 jumba_pleakley = Character.new(
@@ -265,7 +253,7 @@ jumba_pleakley = Character.new(
   price: 30,
   user_id: user_jumba_pleakley.id
 )
-jumba_pleakley.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+jumba_pleakley.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 jumba_pleakley.save!
 
 cobra = Character.new(
@@ -275,7 +263,7 @@ cobra = Character.new(
   price: 45,
   user_id: user_cobra.id
 )
-cobra.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+cobra.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 cobra.save!
 
 user_incredibles = User.create!(
@@ -308,7 +296,6 @@ user_inside_out = User.create!(
   address: Faker::Address.full_address
 )
 
-# Seed data for characters
 character = Character.new(
   character_name: "The Incredibles Family",
   category: "Family",
@@ -316,7 +303,7 @@ character = Character.new(
   price: 50,
   user_id: user_incredibles.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -326,7 +313,7 @@ character = Character.new(
   price: 45,
   user_id: user_monsters.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -336,7 +323,7 @@ character = Character.new(
   price: 40,
   user_id: user_inside_out.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_woody = User.create!(
@@ -429,7 +416,6 @@ user_eve = User.create!(
   address: Faker::Address.full_address
 )
 
-# Seed data for characters
 character = Character.new(
   character_name: "Woody",
   category: "Pixar",
@@ -437,7 +423,7 @@ character = Character.new(
   price: 40,
   user_id: user_woody.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -447,7 +433,7 @@ character = Character.new(
   price: 45,
   user_id: user_buzz.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -457,7 +443,7 @@ character = Character.new(
   price: 35,
   user_id: user_nemo.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -467,7 +453,7 @@ character = Character.new(
   price: 35,
   user_id: user_dory.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -477,7 +463,7 @@ character = Character.new(
   price: 45,
   user_id: user_mcqueen.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -487,7 +473,7 @@ character = Character.new(
   price: 40,
   user_id: user_mater.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -497,7 +483,7 @@ character = Character.new(
   price: 40,
   user_id: user_ratatouille.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -507,7 +493,7 @@ character = Character.new(
   price: 50,
   user_id: user_walle.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -517,7 +503,7 @@ character = Character.new(
   price: 50,
   user_id: user_eve.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_mickey_minne = User.create!(
@@ -560,7 +546,6 @@ user_anna_elsa = User.create!(
   address: Faker::Address.full_address
 )
 
-# Seed data for characters
 character = Character.new(
   character_name: "Mickey and Minnie",
   category: "Family",
@@ -568,7 +553,7 @@ character = Character.new(
   price: 45,
   user_id: user_mickey_minne.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -578,7 +563,7 @@ character = Character.new(
   price: 40,
   user_id: user_timon_pumbaa.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -588,7 +573,7 @@ character = Character.new(
   price: 40,
   user_id: user_peter_tinker.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -598,7 +583,7 @@ character = Character.new(
   price: 45,
   user_id: user_anna_elsa.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_donald = User.create!(
@@ -701,7 +686,6 @@ user_mulan = User.create!(
   address: Faker::Address.full_address
 )
 
-# Seed data for characters
 character = Character.new(
   character_name: "Donald Duck",
   category: "Disney",
@@ -709,7 +693,7 @@ character = Character.new(
   price: 35,
   user_id: user_donald.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -719,7 +703,7 @@ character = Character.new(
   price: 40,
   user_id: user_cinderella.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -729,7 +713,7 @@ character = Character.new(
   price: 40,
   user_id: user_snow_white.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -739,7 +723,7 @@ character = Character.new(
   price: 45,
   user_id: user_ariel.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -749,7 +733,7 @@ character = Character.new(
   price: 45,
   user_id: user_belle.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -759,7 +743,7 @@ character = Character.new(
   price: 40,
   user_id: user_aladdin.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -769,7 +753,7 @@ character = Character.new(
   price: 40,
   user_id: user_jasmine.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -779,7 +763,7 @@ character = Character.new(
   price: 45,
   user_id: user_simba.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -789,7 +773,7 @@ character = Character.new(
   price: 45,
   user_id: user_mufasa.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/mufasa.jpg"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -799,10 +783,9 @@ character = Character.new(
   price: 40,
   user_id: user_mulan.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Seed data for combined characters
 user_black_widow_hawkeye = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -830,7 +813,7 @@ character = Character.new(
   price: 60,
   user_id: user_black_widow_hawkeye.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -840,10 +823,9 @@ character = Character.new(
   price: 65,
   user_id: user_wanda_vision.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Seed data for individual Marvel characters
 user_spider_man = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -861,7 +843,7 @@ character = Character.new(
   price: 55,
   user_id: user_spider_man.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_iron_man = User.create!(
@@ -881,7 +863,7 @@ character = Character.new(
   price: 60,
   user_id: user_iron_man.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_captain_america = User.create!(
@@ -901,7 +883,7 @@ character = Character.new(
   price: 65,
   user_id: user_captain_america.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_hulk = User.create!(
@@ -921,7 +903,7 @@ character = Character.new(
   price: 70,
   user_id: user_hulk.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_thor = User.create!(
@@ -941,7 +923,7 @@ character = Character.new(
   price: 70,
   user_id: user_thor.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_wolverine = User.create!(
@@ -961,7 +943,7 @@ character = Character.new(
   price: 65,
   user_id: user_wolverine.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_deadpool = User.create!(
@@ -981,7 +963,7 @@ character = Character.new(
   price: 60,
   user_id: user_deadpool.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_black_panther = User.create!(
@@ -1001,7 +983,7 @@ character = Character.new(
   price: 70,
   user_id: user_black_panther.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_doctor_strange = User.create!(
@@ -1021,7 +1003,7 @@ character = Character.new(
   price: 65,
   user_id: user_doctor_strange.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_captain_marvel = User.create!(
@@ -1041,7 +1023,7 @@ character = Character.new(
   price: 70,
   user_id: user_captain_marvel.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_ant_man = User.create!(
@@ -1061,7 +1043,7 @@ character = Character.new(
   price: 60,
   user_id: user_ant_man.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_superman = User.create!(
@@ -1081,10 +1063,9 @@ character = Character.new(
   price: 75,
   user_id: user_superman.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Seed data for villain characters
 user_harley_quinn = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1102,7 +1083,7 @@ character = Character.new(
   price: 55,
   user_id: user_harley_quinn.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_lex_luthor = User.create!(
@@ -1122,8 +1103,9 @@ character = Character.new(
   price: 65,
   user_id: user_lex_luthor.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
+
 user_wonder_woman = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1141,7 +1123,7 @@ character = Character.new(
   price: 70,
   user_id: user_wonder_woman.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_flash = User.create!(
@@ -1161,7 +1143,7 @@ character = Character.new(
   price: 65,
   user_id: user_flash.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_catwoman = User.create!(
@@ -1181,7 +1163,7 @@ character = Character.new(
   price: 60,
   user_id: user_catwoman.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_aquaman = User.create!(
@@ -1201,7 +1183,7 @@ character = Character.new(
   price: 65,
   user_id: user_aquaman.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_cyborg = User.create!(
@@ -1221,7 +1203,7 @@ character = Character.new(
   price: 60,
   user_id: user_cyborg.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_green_lantern = User.create!(
@@ -1241,7 +1223,7 @@ character = Character.new(
   price: 65,
   user_id: user_green_lantern.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_green_arrow = User.create!(
@@ -1261,7 +1243,7 @@ character = Character.new(
   price: 60,
   user_id: user_green_arrow.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_batgirl = User.create!(
@@ -1281,12 +1263,9 @@ character = Character.new(
   price: 60,
   user_id: user_batgirl.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Creating seeds for other DC characters following the same pattern...
-
-# Seed data for villain characters (Continued)
 user_darth_vader = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1407,7 +1386,6 @@ user_evil_queen = User.create!(
   address: Faker::Address.full_address
 )
 
-# Seed data for characters
 character = Character.new(
   character_name: "Darth Vader",
   category: "Villains",
@@ -1415,7 +1393,7 @@ character = Character.new(
   price: 50,
   user_id: user_darth_vader.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1425,7 +1403,7 @@ character = Character.new(
   price: 55,
   user_id: user_joker.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 
@@ -1436,7 +1414,7 @@ character = Character.new(
   price: 50,
   user_id: user_maleficent.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1446,7 +1424,7 @@ character = Character.new(
   price: 55,
   user_id: user_sauron.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/sauron.jpg"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1456,7 +1434,7 @@ character = Character.new(
   price: 45,
   user_id: user_cruella.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1466,7 +1444,7 @@ character = Character.new(
   price: 45,
   user_id: user_ursula.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1476,7 +1454,7 @@ character = Character.new(
   price: 60,
   user_id: user_hannibal.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1486,7 +1464,7 @@ character = Character.new(
   price: 50,
   user_id: user_scar.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1496,7 +1474,7 @@ character = Character.new(
   price: 60,
   user_id: user_palpatine.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1506,7 +1484,7 @@ character = Character.new(
   price: 55,
   user_id: user_white_witch.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1516,7 +1494,7 @@ character = Character.new(
   price: 65,
   user_id: user_freddy_krueger.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1526,31 +1504,28 @@ character = Character.new(
   price: 50,
   user_id: user_evil_queen.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 john_wick_user = User.create!(
   email: Faker::Internet.email,
-  password: "password", # Default password
+  password: "password",
   password_confirmation: "password",
-  first_name: "John", # First name related to the character
-  last_name: "Wick", # Last name related to the character
-  phone_nr: Faker::PhoneNumber.phone_number, # Random phone number
-  address: "12 Continental Road, New York City" # Address related to the character
+  first_name: "John",
+  last_name: "Wick",
+  phone_nr: Faker::PhoneNumber.phone_number,
+  address: "12 Continental Road, New York City"
 )
-
-# Create the character for John Wick
 character = Character.new(
   character_name: "John Wick",
   category: "Action",
   description: "John Wick is a retired hitman seeking vengeance for the killing of his beloved dog. Trained in martial arts and armed with a deadly set of skills, he's known for his relentless pursuit of justice.",
-  price: 30, # Price can vary based on character attributes
-  user_id: john_wick_user.id # Associate the user with the character
+  price: 30,
+  user_id: john_wick_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/john_wick"), filename: 'image.jpg')
 character.save!
 
-# Lara Croft
 lara_croft_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1560,7 +1535,6 @@ lara_croft_user = User.create!(
   phone_nr: Faker::PhoneNumber.phone_number,
   address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.state
 )
-
 character = Character.new(
   character_name: "Lara Croft",
   category: "Action",
@@ -1568,10 +1542,9 @@ character = Character.new(
   price: 35,
   user_id: lara_croft_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# James Bond
 james_bond_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1581,7 +1554,6 @@ james_bond_user = User.create!(
   phone_nr: Faker::PhoneNumber.phone_number,
   address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.state
 )
-
 character = Character.new(
   character_name: "James Bond",
   category: "Action",
@@ -1589,10 +1561,9 @@ character = Character.new(
   price: 40,
   user_id: james_bond_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Sarah Connor (Terminator series)
 sarah_connor_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1602,7 +1573,6 @@ sarah_connor_user = User.create!(
   phone_nr: Faker::PhoneNumber.phone_number,
   address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.state
 )
-
 character = Character.new(
   character_name: "Sarah Connor",
   category: "Action",
@@ -1610,10 +1580,10 @@ character = Character.new(
   price: 35,
   user_id: sarah_connor_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# John McClane (Die Hard series)
 john_mcclane_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1623,7 +1593,6 @@ john_mcclane_user = User.create!(
   phone_nr: Faker::PhoneNumber.phone_number,
   address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.state
 )
-
 character = Character.new(
   character_name: "John McClane",
   category: "Action",
@@ -1631,10 +1600,9 @@ character = Character.new(
   price: 35,
   user_id: john_mcclane_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Ellen Ripley (Alien series)
 ellen_ripley_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1644,7 +1612,6 @@ ellen_ripley_user = User.create!(
   phone_nr: Faker::PhoneNumber.phone_number,
   address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.state
 )
-
 character = Character.new(
   character_name: "Ellen Ripley",
   category: "Action",
@@ -1652,10 +1619,9 @@ character = Character.new(
   price: 35,
   user_id: ellen_ripley_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Neo (The Matrix series)
 neo_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1673,10 +1639,9 @@ character = Character.new(
   price: 40,
   user_id: neo_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Indiana Jones
 indiana_jones_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1694,10 +1659,9 @@ character = Character.new(
   price: 35,
   user_id: indiana_jones_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Mad Max
 mad_max_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1715,10 +1679,9 @@ character = Character.new(
   price: 30,
   user_id: mad_max_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Harry Tasker (True Lies)
 harry_tasker_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1736,10 +1699,9 @@ character = Character.new(
   price: 35,
   user_id: harry_tasker_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Ethan Hunt (Mission: Impossible series)
 ethan_hunt_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1757,10 +1719,9 @@ character = Character.new(
   price: 40,
   user_id: ethan_hunt_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Sarah Walker (Chuck)
 sarah_walker_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1778,10 +1739,9 @@ character = Character.new(
   price: 35,
   user_id: sarah_walker_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Leon S. Kennedy (Resident Evil series)
 leon_kennedy_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1799,10 +1759,9 @@ character = Character.new(
   price: 35,
   user_id: leon_kennedy_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Dominic Toretto (Fast & Furious series)
 dominic_toretto_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1820,10 +1779,9 @@ character = Character.new(
   price: 40,
   user_id: dominic_toretto_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Furiosa (Mad Max: Fury Road)
 furiosa_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1841,10 +1799,9 @@ character = Character.new(
   price: 35,
   user_id: furiosa_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# John Rambo
 john_rambo_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1862,10 +1819,9 @@ character = Character.new(
   price: 35,
   user_id: john_rambo_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Ellen Brody (Jaws series)
 ellen_brody_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1883,10 +1839,9 @@ character = Character.new(
   price: 35,
   user_id: ellen_brody_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Riggs and Murtaugh (Lethal Weapon series)
 riggs_and_murtaugh_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1904,10 +1859,9 @@ character = Character.new(
   price: 40,
   user_id: riggs_and_murtaugh_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Harry Potter
 harry_potter_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1925,10 +1879,9 @@ character = Character.new(
   price: 30,
   user_id: harry_potter_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Hermione Granger
 hermione_granger_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1946,10 +1899,9 @@ character = Character.new(
   price: 30,
   user_id: hermione_granger_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Ron Weasley
 ron_weasley_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1967,10 +1919,9 @@ character = Character.new(
   price: 30,
   user_id: ron_weasley_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Frodo Baggins
 frodo_baggins_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1988,10 +1939,9 @@ character = Character.new(
   price: 35,
   user_id: frodo_baggins_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Gandalf
 gandalf_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2009,10 +1959,9 @@ character = Character.new(
   price: 40,
   user_id: gandalf_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Bilbo Baggins
 bilbo_baggins_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2030,10 +1979,9 @@ character = Character.new(
   price: 35,
   user_id: bilbo_baggins_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Katniss Everdeen
 katniss_everdeen_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2051,10 +1999,9 @@ character = Character.new(
   price: 35,
   user_id: katniss_everdeen_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Sherlock Holmes
 sherlock_holmes_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2072,10 +2019,9 @@ character = Character.new(
   price: 40,
   user_id: sherlock_holmes_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Dr. John Watson
 dr_john_watson_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2093,10 +2039,9 @@ character = Character.new(
   price: 35,
   user_id: dr_john_watson_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Atticus Finch
 atticus_finch_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2114,10 +2059,9 @@ character = Character.new(
   price: 45,
   user_id: atticus_finch_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Scout Finch
 scout_finch_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2135,10 +2079,9 @@ character = Character.new(
   price: 30,
   user_id: scout_finch_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Holden Caulfield
 holden_caulfield_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2156,10 +2099,9 @@ character = Character.new(
   price: 35,
   user_id: holden_caulfield_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Elizabeth Bennet
 elizabeth_bennet_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2177,10 +2119,9 @@ character = Character.new(
   price: 30,
   user_id: elizabeth_bennet_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Jay Gatsby
 jay_gatsby_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2198,10 +2139,9 @@ character = Character.new(
   price: 40,
   user_id: jay_gatsby_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Huckleberry Finn
 huckleberry_finn_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2219,7 +2159,7 @@ character = Character.new(
   price: 35,
   user_id: huckleberry_finn_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 ebenezer_scrooge_user = User.create!(
@@ -2239,10 +2179,9 @@ character = Character.new(
   price: 45,
   user_id: ebenezer_scrooge_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Mr. Darcy
 mr_darcy_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2260,10 +2199,10 @@ character = Character.new(
   price: 50,
   user_id: mr_darcy_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Scarlett O'Hara
 scarlett_ohara_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2281,10 +2220,9 @@ character = Character.new(
   price: 45,
   user_id: scarlett_ohara_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Don Quixote
 don_quixote_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2302,10 +2240,9 @@ character = Character.new(
   price: 35,
   user_id: don_quixote_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Jane Eyre
 jane_eyre_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2323,10 +2260,9 @@ character = Character.new(
   price: 40,
   user_id: jane_eyre_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Mr. Rochester
 mr_rochester_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2344,10 +2280,9 @@ character = Character.new(
   price: 45,
   user_id: mr_rochester_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Tom Sawyer
 tom_sawyer_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2365,10 +2300,9 @@ character = Character.new(
   price: 35,
   user_id: tom_sawyer_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-# Jo March
 jo_march_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -2378,7 +2312,6 @@ jo_march_user = User.create!(
   phone_nr: Faker::PhoneNumber.phone_number,
   address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.state
 )
-
 character = Character.new(
   character_name: "Jo March",
   category: "Books",
@@ -2386,7 +2319,7 @@ character = Character.new(
   price: 40,
   user_id: jo_march_user.id
 )
-character.photo.attach(io: URI.open("https://asset.cloudinary.com/djvyamesz/1cc2dcd83d048825fcba4aa8a644b02b"), filename: 'nanny.jpg', content_type: 'image/jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 puts 'Finished'
