@@ -1,8 +1,10 @@
 
+
   <div class="image_container">
   <div class="profile-image">
     <%=image_tag "mother.jpeg", class:"profile"%>
   </div>
+
 <div class="container">
 
 
@@ -61,6 +63,17 @@
           <p class="booking_txt">You have no bookings</p>
         <% end %>
         </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-action="click->toggle#tab">Map</a>
+      <div class="tab-map d-none" data-toggle-target="tabMap">
+        <div style="width: 800px; height: 600px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          <%# <%= render 'marker', dashboard: @dashboard %>
+        </div>
       </div>
     </li>
   </ul>

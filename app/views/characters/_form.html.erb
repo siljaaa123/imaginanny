@@ -1,8 +1,8 @@
 <%= simple_form_for(@character) do |f| %>
-<%= f.input :category, collection: %w[Villains Disney Pixar Marvel DC Action Books Family] %>
-<%= f.input :character_name %>
-<%= f.input :description %>
-<%= f.input :price %>
-<%= f.input :photo, as: :file %>
-<%= f.submit "Create Character", class:"btn" %>
+  <%= f.input :category, collection: %w[Villains Disney Pixar Marvel DC Action Books Family] %>
+  <%= f.input :character_name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Create Character", class:"btn" %>
 <% end %>

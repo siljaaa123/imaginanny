@@ -11,5 +11,13 @@
 @import "components/index";
 @import "pages/index";
 @import "layouts/index";
+
+@import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
+@import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
+@import "components/map";
+@import "components/address_autocomplete";
+@import "components/toggle"
+
 @import "pages/dashboard";
 @import "pages/character";
+

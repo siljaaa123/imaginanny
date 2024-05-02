@@ -4,10 +4,24 @@ class DashboardsController < ApplicationController
   # before_action :set_booking, only: %i[index show edit update]
 
   def index
+
+    # @user = User.find(current_user.id)
+    # @bookings = Booking.where(character: current_user)
+
     @user = User.find(current_user.id)
     @character = @user.character
-    @my_bookingsbookings = Booking.where(character: @character)
-    @bookings = Booking.where(user: current_user)
+    @bookings = Booking.where(character: @character)
+    @my_bookings = Booking.where(user: current_user)
+
+    # The `geocoded` scope filters only babysitter with coordinates
+    @markers = @bookings.each do |booking|
+      {
+        lat: booking.character.latitude,
+        lng: booking.character.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {user: booking.character}),
+        marker_html: render_to_string(partial: "marker", locals: {user: booking.character})
+      }
+    end
   end
 
   def profile
