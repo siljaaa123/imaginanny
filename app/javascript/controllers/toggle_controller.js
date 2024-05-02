@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="toggle"
 export default class extends Controller {
-  static targets = ["detail", "form", "tabInfo", "tabBooking"]
+  static targets = ["detail", "form", "tabInfo", "tabBooking", "tabMap"]
 
   fire() {
     this.formTarget.classList.remove("d-none")
@@ -12,6 +12,6 @@ export default class extends Controller {
     event.preventDefault();
     this.tabInfoTarget.classList.toggle("d-none")
     this.tabBookingTarget.classList.toggle("d-none")
-
+    this.tabMapTarget.classList.toggle("d-none")
   }
 }

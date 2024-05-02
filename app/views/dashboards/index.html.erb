@@ -1,3 +1,5 @@
+
+
 <div class="container">
   <h1>My Profile</h1>
 
@@ -32,6 +34,17 @@
           </li>
           <% end %>
         </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-action="click->toggle#tab">Map</a>
+      <div class="tab-map d-none" data-toggle-target="tabMap">
+        <div style="width: 800px; height: 600px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          <%# <%= render 'marker', dashboard: @dashboard %>
+        </div>
       </div>
     </li>
   </ul>
