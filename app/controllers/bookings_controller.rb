@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.character = @character
     @booking.user = @user
     if @booking.save
-      flash.alert = 'Booking created'
+      flash.alert = 'Your Imaginanny has been reserved!'
       redirect_to character_path(@character)
     else
       render 'characters/show', status: :unprocessable_entity

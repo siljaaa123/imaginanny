@@ -9,31 +9,42 @@
 
 
   <h1>My Profile</h1>
-
-
-  <ul class="nav nav-pills" data-controller="toggle">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#" data-action="click->toggle#tab" id="details">My Details</a>
-      <div class="tab-info" data-toggle-target="tabInfo">
-        <div class="user" data-controller="toggle">
-          <div class="user-details" data-toggle-target="detail">
-            <p><%= current_user.first_name  %></p>
-            <p><%= current_user.last_name  %></p>
-            <p><%= current_user.address %></p>
-            <p><%= current_user.email  %></p>
-            <p><%= current_user.phone_nr  %></p>
-            <button class="btn" data-action="click->toggle#fire">Edit</button>
-             <a href="characters/new"><button class="character_btn">Create Character</button></a>
-          </div>
-          <div class="user-change d-none" data-toggle-target="form">
-            <%= render 'devise/registrations/edit'  %>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" data-action="click->toggle#tab" id="bookings">My sitters</a>
-      <div class="tab-bookings d-none" data-toggle-target="tabBooking">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">My details</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">My sittings</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">My bookings</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="map-tab" data-bs-toggle="tab" data-bs-target="#map-tab-pane" type="button" role="tab" aria-controls="map-tab-pane" aria-selected="false">Map</button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+    <div class="user-details">
+      <p><%= current_user.first_name  %></p>
+      <p><%= current_user.last_name  %></p>
+      <p><%= current_user.address %></p>
+      <p><%= current_user.email  %></p>
+      <p><%= current_user.phone_nr  %></p>
+      <button class="btn" data-action="click->toggle#fire">Edit</button>
+      <% unless @user.character.present?  %>
+        <a href="characters/new"><button class="character_btn">Create Character</button></a>
+      <% end %>
+    </div>
+    <div class="user-change d-none" data-toggle-target="form">
+      <%= render 'devise/registrations/edit'  %>
+    </div>
+    <div class="container_cancel">
+      <%= render "devise/registrations/cancel" %>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+    <div class="tab-bookings">
         <ul>
         <% if @bookings.any? %>
           <% @bookings.each do |booking| %>
@@ -47,10 +58,9 @@
         <% end %>
         </ul>
       </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" data-action="click->toggle#tab" id="bookings">My Bookings</a>
-      <div class="tab-my-bookings d-none" data-toggle-target="tabMyBooking">
+  </div>
+  <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+    <div>
         <ul>
         <% if @my_bookings.any? %>
           <% @my_bookings.each do |booking| %>
@@ -58,16 +68,28 @@
             <%= booking.date %>
             <%= booking.character.character_name %>
           </li>
+          <% if booking.date.past? %>
+            <div class="add-reviews" data-action="click->toggle#review">
+            <button class="btn" data-toggle-target="btnReview">Leave a review for your imaginanny</button>
+            <div class="d-none" data-toggle-target="formReview">
+              <%= simple_form_for [booking, Review.new] do |f| %>
+                <%= f.input :content %>
+                <%= f.input :rating %>
+                <%= f.button :submit, "Review your Imaginanny", class: "btn" %>
+                <%= render "shared/flashes" %>
+              <% end %>
+            </div>
+            </div>
+          <% end %>
           <% end %>
         <% else %>
           <p class="booking_txt">You have no bookings</p>
         <% end %>
         </ul>
       </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" data-action="click->toggle#tab">Map</a>
-      <div class="tab-map d-none" data-toggle-target="tabMap">
+  </div>
+  <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+    <div>
         <div style="width: 800px; height: 600px;"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
@@ -75,9 +97,11 @@
           <%# <%= render 'marker', dashboard: @dashboard %>
         </div>
       </div>
-    </li>
-  </ul>
-  <div class="container_cancel">
-  <%= render "devise/registrations/cancel" %>
   </div>
+</div>
+
+
+
+  </ul>
+
 </div>

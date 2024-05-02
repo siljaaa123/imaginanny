@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     resources :bookings, except: %i[index show]
   end
 
+  resources :bookings, except: %i[index show] do
+    resources :reviews, only: %i[new create]
+  end
   devise_for :users
   root to: "pages#home"
 
