@@ -44,7 +44,7 @@ addams_family = Character.new(
   price: 40,
   user_id: addams_user.id
 )
-addams_family.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+addams_family.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 addams_family.save!
 
 hsm_user = User.create!(
@@ -142,7 +142,7 @@ thanos = Character.new(
   price: 35,
   user_id: user_thanos.id
 )
-thanos.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+thanos.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 thanos.save!
 
 mary_poppins = Character.new(
@@ -152,7 +152,7 @@ mary_poppins = Character.new(
   price: 40,
   user_id: user_mary_poppins.id
 )
-mary_poppins.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+mary_poppins.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 mary_poppins.save!
 
 batman = Character.new(
@@ -162,7 +162,7 @@ batman = Character.new(
   price: 45,
   user_id: user_batman.id
 )
-batman.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+batman.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 batman.save!
 
 yzma_kronk = Character.new(
@@ -172,7 +172,7 @@ yzma_kronk = Character.new(
   price: 30,
   user_id: user_yzma_kronk.id
 )
-yzma_kronk.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+yzma_kronk.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 yzma_kronk.save!
 
 aragorn = Character.new(
@@ -182,7 +182,7 @@ aragorn = Character.new(
   price: 50,
   user_id: user_aragorn.id
 )
-aragorn.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+aragorn.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 aragorn.save!
 
 user_lilo_stitch = User.create!(
@@ -232,7 +232,7 @@ lilo_stitch = Character.new(
   price: 40,
   user_id: user_lilo_stitch.id
 )
-lilo_stitch.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+lilo_stitch.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 lilo_stitch.save!
 
 nani = Character.new(
@@ -242,7 +242,7 @@ nani = Character.new(
   price: 35,
   user_id: user_nani.id
 )
-nani.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+nani.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 nani.save!
 
 jumba_pleakley = Character.new(
@@ -252,7 +252,7 @@ jumba_pleakley = Character.new(
   price: 30,
   user_id: user_jumba_pleakley.id
 )
-jumba_pleakley.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+jumba_pleakley.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 jumba_pleakley.save!
 
 cobra = Character.new(
@@ -262,7 +262,7 @@ cobra = Character.new(
   price: 45,
   user_id: user_cobra.id
 )
-cobra.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+cobra.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 cobra.save!
 
 user_incredibles = User.create!(
@@ -302,7 +302,7 @@ character = Character.new(
   price: 50,
   user_id: user_incredibles.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -312,7 +312,7 @@ character = Character.new(
   price: 45,
   user_id: user_monsters.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -322,7 +322,7 @@ character = Character.new(
   price: 40,
   user_id: user_inside_out.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_woody = User.create!(
@@ -422,7 +422,7 @@ character = Character.new(
   price: 40,
   user_id: user_woody.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -432,7 +432,7 @@ character = Character.new(
   price: 45,
   user_id: user_buzz.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -442,7 +442,7 @@ character = Character.new(
   price: 35,
   user_id: user_nemo.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -452,7 +452,7 @@ character = Character.new(
   price: 35,
   user_id: user_dory.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -462,7 +462,7 @@ character = Character.new(
   price: 45,
   user_id: user_mcqueen.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -472,7 +472,7 @@ character = Character.new(
   price: 40,
   user_id: user_mater.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -482,7 +482,7 @@ character = Character.new(
   price: 40,
   user_id: user_ratatouille.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -492,7 +492,7 @@ character = Character.new(
   price: 50,
   user_id: user_walle.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -502,7 +502,7 @@ character = Character.new(
   price: 50,
   user_id: user_eve.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_mickey_minne = User.create!(
@@ -552,7 +552,7 @@ character = Character.new(
   price: 45,
   user_id: user_mickey_minne.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -562,7 +562,7 @@ character = Character.new(
   price: 40,
   user_id: user_timon_pumbaa.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -572,7 +572,7 @@ character = Character.new(
   price: 40,
   user_id: user_peter_tinker.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -582,7 +582,7 @@ character = Character.new(
   price: 45,
   user_id: user_anna_elsa.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_donald = User.create!(
@@ -692,7 +692,7 @@ character = Character.new(
   price: 35,
   user_id: user_donald.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -702,7 +702,7 @@ character = Character.new(
   price: 40,
   user_id: user_cinderella.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -712,7 +712,7 @@ character = Character.new(
   price: 40,
   user_id: user_snow_white.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -722,7 +722,7 @@ character = Character.new(
   price: 45,
   user_id: user_ariel.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -732,7 +732,7 @@ character = Character.new(
   price: 45,
   user_id: user_belle.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -742,7 +742,7 @@ character = Character.new(
   price: 40,
   user_id: user_aladdin.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -752,7 +752,7 @@ character = Character.new(
   price: 40,
   user_id: user_jasmine.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -762,7 +762,7 @@ character = Character.new(
   price: 45,
   user_id: user_simba.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -772,7 +772,7 @@ character = Character.new(
   price: 45,
   user_id: user_mufasa.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/mufasa.jpg"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -782,7 +782,7 @@ character = Character.new(
   price: 40,
   user_id: user_mulan.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_black_widow_hawkeye = User.create!(
@@ -812,7 +812,7 @@ character = Character.new(
   price: 60,
   user_id: user_black_widow_hawkeye.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -822,7 +822,7 @@ character = Character.new(
   price: 65,
   user_id: user_wanda_vision.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_spider_man = User.create!(
@@ -842,7 +842,7 @@ character = Character.new(
   price: 55,
   user_id: user_spider_man.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_iron_man = User.create!(
@@ -862,7 +862,7 @@ character = Character.new(
   price: 60,
   user_id: user_iron_man.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_captain_america = User.create!(
@@ -882,7 +882,7 @@ character = Character.new(
   price: 65,
   user_id: user_captain_america.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_hulk = User.create!(
@@ -902,7 +902,7 @@ character = Character.new(
   price: 70,
   user_id: user_hulk.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_thor = User.create!(
@@ -922,7 +922,7 @@ character = Character.new(
   price: 70,
   user_id: user_thor.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_wolverine = User.create!(
@@ -942,7 +942,7 @@ character = Character.new(
   price: 65,
   user_id: user_wolverine.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_deadpool = User.create!(
@@ -962,7 +962,7 @@ character = Character.new(
   price: 60,
   user_id: user_deadpool.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_black_panther = User.create!(
@@ -982,7 +982,7 @@ character = Character.new(
   price: 70,
   user_id: user_black_panther.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_doctor_strange = User.create!(
@@ -1002,7 +1002,7 @@ character = Character.new(
   price: 65,
   user_id: user_doctor_strange.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_captain_marvel = User.create!(
@@ -1022,7 +1022,7 @@ character = Character.new(
   price: 70,
   user_id: user_captain_marvel.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_ant_man = User.create!(
@@ -1042,7 +1042,7 @@ character = Character.new(
   price: 60,
   user_id: user_ant_man.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_superman = User.create!(
@@ -1062,7 +1062,7 @@ character = Character.new(
   price: 75,
   user_id: user_superman.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_harley_quinn = User.create!(
@@ -1082,7 +1082,7 @@ character = Character.new(
   price: 55,
   user_id: user_harley_quinn.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_lex_luthor = User.create!(
@@ -1102,7 +1102,7 @@ character = Character.new(
   price: 65,
   user_id: user_lex_luthor.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 user_wonder_woman = User.create!(
   email: Faker::Internet.email,
@@ -1121,7 +1121,7 @@ character = Character.new(
   price: 70,
   user_id: user_wonder_woman.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_flash = User.create!(
@@ -1141,7 +1141,7 @@ character = Character.new(
   price: 65,
   user_id: user_flash.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_catwoman = User.create!(
@@ -1161,7 +1161,7 @@ character = Character.new(
   price: 60,
   user_id: user_catwoman.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_aquaman = User.create!(
@@ -1181,7 +1181,7 @@ character = Character.new(
   price: 65,
   user_id: user_aquaman.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_cyborg = User.create!(
@@ -1201,7 +1201,7 @@ character = Character.new(
   price: 60,
   user_id: user_cyborg.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_green_lantern = User.create!(
@@ -1221,7 +1221,7 @@ character = Character.new(
   price: 65,
   user_id: user_green_lantern.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_green_arrow = User.create!(
@@ -1241,7 +1241,7 @@ character = Character.new(
   price: 60,
   user_id: user_green_arrow.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_batgirl = User.create!(
@@ -1261,7 +1261,7 @@ character = Character.new(
   price: 60,
   user_id: user_batgirl.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 user_darth_vader = User.create!(
@@ -1392,7 +1392,7 @@ character = Character.new(
   price: 50,
   user_id: user_darth_vader.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1402,7 +1402,7 @@ character = Character.new(
   price: 55,
   user_id: user_joker.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 
@@ -1413,7 +1413,7 @@ character = Character.new(
   price: 50,
   user_id: user_maleficent.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1423,7 +1423,7 @@ character = Character.new(
   price: 55,
   user_id: user_sauron.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/sauron.jpg"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1433,7 +1433,7 @@ character = Character.new(
   price: 45,
   user_id: user_cruella.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1443,7 +1443,7 @@ character = Character.new(
   price: 45,
   user_id: user_ursula.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1453,7 +1453,7 @@ character = Character.new(
   price: 60,
   user_id: user_hannibal.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1463,7 +1463,7 @@ character = Character.new(
   price: 50,
   user_id: user_scar.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1473,7 +1473,7 @@ character = Character.new(
   price: 60,
   user_id: user_palpatine.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1483,7 +1483,7 @@ character = Character.new(
   price: 55,
   user_id: user_white_witch.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1493,7 +1493,7 @@ character = Character.new(
   price: 65,
   user_id: user_freddy_krueger.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 character = Character.new(
@@ -1503,7 +1503,7 @@ character = Character.new(
   price: 50,
   user_id: user_evil_queen.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 john_wick_user = User.create!(
@@ -1522,7 +1522,7 @@ character = Character.new(
   price: 30,
   user_id: john_wick_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/john_wick"), filename: 'image.jpg')
 character.save!
 
 
@@ -1542,7 +1542,7 @@ character = Character.new(
   price: 35,
   user_id: lara_croft_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 james_bond_user = User.create!(
@@ -1561,7 +1561,7 @@ character = Character.new(
   price: 40,
   user_id: james_bond_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 sarah_connor_user = User.create!(
@@ -1580,7 +1580,7 @@ character = Character.new(
   price: 35,
   user_id: sarah_connor_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 john_mcclane_user = User.create!(
@@ -1599,7 +1599,7 @@ character = Character.new(
   price: 35,
   user_id: john_mcclane_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 ellen_ripley_user = User.create!(
@@ -1618,7 +1618,7 @@ character = Character.new(
   price: 35,
   user_id: ellen_ripley_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 
@@ -1638,7 +1638,7 @@ character = Character.new(
   price: 40,
   user_id: neo_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 indiana_jones_user = User.create!(
@@ -1658,7 +1658,7 @@ character = Character.new(
   price: 35,
   user_id: indiana_jones_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 mad_max_user = User.create!(
@@ -1678,7 +1678,7 @@ character = Character.new(
   price: 30,
   user_id: mad_max_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 harry_tasker_user = User.create!(
@@ -1698,7 +1698,7 @@ character = Character.new(
   price: 35,
   user_id: harry_tasker_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 ethan_hunt_user = User.create!(
@@ -1718,7 +1718,7 @@ character = Character.new(
   price: 40,
   user_id: ethan_hunt_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 sarah_walker_user = User.create!(
@@ -1738,7 +1738,7 @@ character = Character.new(
   price: 35,
   user_id: sarah_walker_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 leon_kennedy_user = User.create!(
@@ -1758,7 +1758,7 @@ character = Character.new(
   price: 35,
   user_id: leon_kennedy_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 dominic_toretto_user = User.create!(
@@ -1778,7 +1778,7 @@ character = Character.new(
   price: 40,
   user_id: dominic_toretto_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 furiosa_user = User.create!(
@@ -1798,7 +1798,7 @@ character = Character.new(
   price: 35,
   user_id: furiosa_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 john_rambo_user = User.create!(
@@ -1818,7 +1818,7 @@ character = Character.new(
   price: 35,
   user_id: john_rambo_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 ellen_brody_user = User.create!(
@@ -1838,7 +1838,7 @@ character = Character.new(
   price: 35,
   user_id: ellen_brody_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 riggs_and_murtaugh_user = User.create!(
@@ -1858,7 +1858,7 @@ character = Character.new(
   price: 40,
   user_id: riggs_and_murtaugh_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 harry_potter_user = User.create!(
@@ -1878,7 +1878,7 @@ character = Character.new(
   price: 30,
   user_id: harry_potter_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 hermione_granger_user = User.create!(
@@ -1898,7 +1898,7 @@ character = Character.new(
   price: 30,
   user_id: hermione_granger_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 ron_weasley_user = User.create!(
@@ -1918,7 +1918,7 @@ character = Character.new(
   price: 30,
   user_id: ron_weasley_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 frodo_baggins_user = User.create!(
@@ -1938,7 +1938,7 @@ character = Character.new(
   price: 35,
   user_id: frodo_baggins_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 gandalf_user = User.create!(
@@ -1958,7 +1958,7 @@ character = Character.new(
   price: 40,
   user_id: gandalf_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 bilbo_baggins_user = User.create!(
@@ -1978,7 +1978,7 @@ character = Character.new(
   price: 35,
   user_id: bilbo_baggins_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 katniss_everdeen_user = User.create!(
@@ -1998,7 +1998,7 @@ character = Character.new(
   price: 35,
   user_id: katniss_everdeen_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 sherlock_holmes_user = User.create!(
@@ -2018,7 +2018,7 @@ character = Character.new(
   price: 40,
   user_id: sherlock_holmes_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 dr_john_watson_user = User.create!(
@@ -2038,7 +2038,7 @@ character = Character.new(
   price: 35,
   user_id: dr_john_watson_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 atticus_finch_user = User.create!(
@@ -2058,7 +2058,7 @@ character = Character.new(
   price: 45,
   user_id: atticus_finch_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 scout_finch_user = User.create!(
@@ -2078,7 +2078,7 @@ character = Character.new(
   price: 30,
   user_id: scout_finch_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 holden_caulfield_user = User.create!(
@@ -2098,7 +2098,7 @@ character = Character.new(
   price: 35,
   user_id: holden_caulfield_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 elizabeth_bennet_user = User.create!(
@@ -2118,7 +2118,7 @@ character = Character.new(
   price: 30,
   user_id: elizabeth_bennet_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 jay_gatsby_user = User.create!(
@@ -2138,7 +2138,7 @@ character = Character.new(
   price: 40,
   user_id: jay_gatsby_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 huckleberry_finn_user = User.create!(
@@ -2158,7 +2158,7 @@ character = Character.new(
   price: 35,
   user_id: huckleberry_finn_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 ebenezer_scrooge_user = User.create!(
@@ -2178,7 +2178,7 @@ character = Character.new(
   price: 45,
   user_id: ebenezer_scrooge_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 mr_darcy_user = User.create!(
@@ -2198,7 +2198,7 @@ character = Character.new(
   price: 50,
   user_id: mr_darcy_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 scarlett_ohara_user = User.create!(
@@ -2218,7 +2218,7 @@ character = Character.new(
   price: 45,
   user_id: scarlett_ohara_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 don_quixote_user = User.create!(
@@ -2238,7 +2238,7 @@ character = Character.new(
   price: 35,
   user_id: don_quixote_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 jane_eyre_user = User.create!(
@@ -2258,7 +2258,7 @@ character = Character.new(
   price: 40,
   user_id: jane_eyre_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 mr_rochester_user = User.create!(
@@ -2278,7 +2278,7 @@ character = Character.new(
   price: 45,
   user_id: mr_rochester_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 tom_sawyer_user = User.create!(
@@ -2298,7 +2298,7 @@ character = Character.new(
   price: 35,
   user_id: tom_sawyer_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 jo_march_user = User.create!(
@@ -2317,7 +2317,7 @@ character = Character.new(
   price: 40,
   user_id: jo_march_user.id
 )
-character.photo.attach(io: File.open("/Users/oceane/Downloads/women_power.webp"), filename: 'image.jpg')
+character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
 puts 'Finished'
