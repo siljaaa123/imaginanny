@@ -49,6 +49,7 @@ addams_family.save!
 
 hsm_user = User.create!(
   email: Faker::Internet.email,
+
   password: "password",
   password_confirmation: "password",
   first_name: "Sharpay",
@@ -1104,6 +1105,7 @@ character = Character.new(
 )
 character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
+
 user_wonder_woman = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1384,7 +1386,6 @@ user_evil_queen = User.create!(
   address: Faker::Address.full_address
 )
 
-
 character = Character.new(
   character_name: "Darth Vader",
   category: "Villains",
@@ -1525,7 +1526,6 @@ character = Character.new(
 character.photo.attach(io: File.open("/Users/oceane/Downloads/john_wick"), filename: 'image.jpg')
 character.save!
 
-
 lara_croft_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1580,6 +1580,7 @@ character = Character.new(
   price: 35,
   user_id: sarah_connor_user.id
 )
+
 character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
@@ -1621,7 +1622,6 @@ character = Character.new(
 character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
-
 neo_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
@@ -1631,6 +1631,7 @@ neo_user = User.create!(
   phone_nr: Faker::PhoneNumber.phone_number,
   address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.state
 )
+
 character = Character.new(
   character_name: "Neo",
   category: "Action",
@@ -2198,6 +2199,7 @@ character = Character.new(
   price: 50,
   user_id: mr_darcy_user.id
 )
+
 character.photo.attach(io: File.open("/Users/oceane/Downloads/w.webp"), filename: 'image.jpg')
 character.save!
 
