@@ -17,8 +17,15 @@
       <p><strong>Price:</strong></p>
       <p><%= @character.price %>€/hour</p>
     </div>
-<%= render "bookings/form", booking: @booking %>
-<%= render "shared/flashes" %>
+    <%= render "bookings/form", booking: @booking %>
+    <%= render "shared/flashes" %>
+    <div>
+    <h3>What others people have said about this Imaginanny</h3>
+    <% @character.bookings.each do |booking| %>
+    <%= booking.review.content %>
+    <p></p><%= '⭐️' * booking.review.rating %>
+    <% end %>
+    </div>
   </div>
 </body>
 </html>
