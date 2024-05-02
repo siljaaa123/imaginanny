@@ -4,6 +4,10 @@ class CharactersController < ApplicationController
   def index
     @characters = Character.all
     filter_characters
+
+    if params[:query].present?
+      @characters = @characters.where("character_name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def new

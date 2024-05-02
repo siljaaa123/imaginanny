@@ -14,19 +14,23 @@
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             </li>
           <% end %>
+          
         </ul>
       </div>
 
     <div class="navbar-search" id="navbarSupportedContent">
-
-        <div class="search-navbar">
-          <div class="search-bar p-2 d-flex flex-lg-row ">
-            <form action="/characters" class="form-inline padded">
-            <input type="text" class="form-control border-radius input-lg" placeholder="Find your Imaginanny">
-            <input type="submit" class="character_btn_search p-2" value="Search">
-            </form>
-          </div>
+      <div class="search-navbar">
+        <div class="search-bar p-2 d-flex flex-lg-row ">
+          <%= form_with url: characters_path, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Find your imaginanny"
+              %>
+            <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+          <% end %>
         </div>
+      </div>
     </div>
   </div>
 </div>
