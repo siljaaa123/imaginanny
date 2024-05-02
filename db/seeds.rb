@@ -1,6 +1,6 @@
 # You need the images folder and its path
 # Then define file_path
-file_path = "/Users/oceane/Downloads/"
+file_path = "/Users/mariadelmarsevillaescobar/Desktop/"
 
 require 'open-uri'
 
@@ -1522,7 +1522,7 @@ character = Character.new(
   price: 30,
   user_id: john_wick_user.id
 )
-character.photo.attach(io: File.open("#{file_path}john_wick"), filename: 'image.jpg')
+character.photo.attach(io: File.open("#{file_path}john_wick.jpg"), filename: 'image.jpg')
 character.save!
 
 
