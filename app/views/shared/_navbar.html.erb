@@ -1,36 +1,36 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "nanny.jpg", class: "logo" %>
-    <% end %>
+  <div class="nav-bar">
     <div class="home-navbar">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "imaginanny-logo.png", class: "logo" %>
+    <% end %>
         <ul class="navbar-nav">
           <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to "My Profile", :dashboard %>
+              <%= link_to "My Profile", :dashboard, id: "nav-profile" %>
             </li>
           <% else %>
             <li class="nav-item">
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             </li>
           <% end %>
-          
         </ul>
       </div>
-
-    <div class="navbar-search" id="navbarSupportedContent">
-      <div class="search-navbar">
-        <div class="search-bar p-2 d-flex flex-lg-row ">
-          <%= form_with url: characters_path, method: :get, class: "d-flex" do %>
-            <%= text_field_tag :query,
-                  params[:query],
-                  class: "form-control",
-                  placeholder: "Find your imaginanny"
-              %>
-            <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-          <% end %>
-        </div>
+      <div class="search-bar-container">
+        <ul class="navbar-nav">
+          <li class="nav-item flex-grow-1">
+              <div class="search-bar p-2 d-flex flex-lg-row">
+                <%= form_with url: characters_path, method: :get, class: "d-flex" do %>
+                  <%= text_field_tag :query,
+                        params[:query],
+                        class: "form-control",
+                        placeholder: "Find your imaginanny"
+                    %>
+                  <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </li>
+        </ul>
       </div>
-    </div>
   </div>
 </div>

@@ -13,3 +13,7 @@
   display: flex;
   justify-content: center;
 }
+
+.carousel-inner .carousel-item {
+  transition: transform 2s ease;
+}
