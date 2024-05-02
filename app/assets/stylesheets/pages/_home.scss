@@ -68,3 +68,20 @@
    height: auto;
   }
 }
+
+.logo_banner {
+  border-radius: 50%;
+}
+.character_btn_search {
+  padding: none;
+  background-color: $viridian;
+  font-family: $body-font;
+  color: white;
+  border: none;
+  border-radius: 15px;
+}
+.character_btn_search:hover {
+  background-color: $tea;
+  font-family: $body-font;
+  color: black;
+}

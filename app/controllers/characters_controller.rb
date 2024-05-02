@@ -32,7 +32,7 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:category, :description, :character_name, :price, :user_id)
+    params.require(:character).permit(:category, :description, :character_name, :price, :user_id, :photo)
   end
 
   def filter_characters

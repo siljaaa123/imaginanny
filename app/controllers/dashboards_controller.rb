@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
   # before_action :set_booking, only: %i[index show edit update]
 
   def index
+
     # @user = User.find(current_user.id)
     # @bookings = Booking.where(character: current_user)
 

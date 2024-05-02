@@ -1,0 +1,113 @@
+h1 {
+  font-family: $headers-font;
+  font-size: 60px;
+}
+
+.btn {
+  background-color: $viridian;
+  font-family: $body-font;
+  color: white;
+}
+
+.btn:hover {
+  background-color: $tea;
+  font-family: $body-font;
+  color: black;
+}
+.character_btn{
+  background-color: $viridian;
+  font-family: $body-font;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin-left: 40px;
+}
+
+.character_btn:hover{
+  background-color: $tea;
+  font-family: $body-font;
+  color: black;
+
+}
+
+.nav-link active {
+  background-color: $viridian;
+  font-family: $body-font;
+  color: white;
+
+}
+
+p {
+  font-family: $body-font;
+}
+
+.image_container {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+
+}
+.profile-image {
+  width: 400px;
+  margin-right: 20px;
+  justify-content: right;
+}
+
+.profile-image img {
+  width: 100%;
+  border-radius: 30px;
+}
+
+.description_container {
+  width: 600px;
+
+  h2{
+    margin-top: 20px;
+    font-family: $body-font;
+    font-size: 26px;
+  }
+}
+
+#details {
+  background-color: $viridian;
+  font-family: $body-font;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 15px;
+
+}
+
+#details:hover {
+  background-color: $tea;
+  font-family: $body-font;
+  color: black;
+}
+
+#bookings {
+  background-color: $viridian;
+  font-family: $body-font;
+  color: white;
+
+}
+
+#bookings:hover {
+  background-color: $tea;
+  font-family: $body-font;
+  color: black;
+}
+
+.booking_txt {
+  align-text: center;
+  font-family: $body-font;
+}
+
+.container_cancel {
+  margin-top: 30px;
+}
