@@ -30,7 +30,7 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-action="click->toggle#tab" id="bookings">Bookings</a>
+      <a class="nav-link" href="#" data-action="click->toggle#tab" id="bookings">My sitters</a>
       <div class="tab-bookings d-none" data-toggle-target="tabBooking">
         <ul>
         <% if @bookings.any? %>
@@ -42,6 +42,23 @@
           <% end %>
         <% else %>
           <p class="booking_txt">You have no Bookings</p>
+        <% end %>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-action="click->toggle#tab" id="bookings">My Bookings</a>
+      <div class="tab-my-bookings d-none" data-toggle-target="tabMyBooking">
+        <ul>
+        <% if @my_bookings.any? %>
+          <% @my_bookings.each do |booking| %>
+          <li>
+            <%= booking.date %>
+            <%= booking.character.character_name %>
+          </li>
+          <% end %>
+        <% else %>
+          <p class="booking_txt">You have no bookings</p>
         <% end %>
         </ul>
       </div>
