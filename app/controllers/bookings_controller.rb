@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_user, only: %i[new create]
-  before_action :set_character, only: %i[new create edit update]
+  before_action :set_character, only: %i[new create]
   before_action :set_booking, only: %i[destroy edit update]
 
   def new
@@ -19,13 +19,14 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking), notice: 'Booking was successfully updated.'
+      redirect_to :dashboard, notice: 'Booking was successfully updated.'
     else
-      render :edit, status: :unprocessable_entity
+      render :dashboard, status: :unprocessable_entity
     end
   end
 

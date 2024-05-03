@@ -1,6 +1,23 @@
-<%= simple_form_for [@character, @booking] do |f| %>
-  <%= f.date_field :date %>
-  <%= f.time_field :start_time %>
-  <%= f.time_field :end_time %>
-  <%= f.submit "Book", class:"btn" %>
-<% end %>
+<div class="card-form">
+  <h3>Book an Imaginanny</h3>
+
+  <%= simple_form_for [@character, @booking], html: { class: 'booking-form' } do |f| %>
+    <div class="form-group">
+      <%= f.label :date %>
+      <%= f.date_field :date, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.input :start_time, class: 'form-control', as: :time, :minute_step => 15 %>
+    </div>
+
+  <div class="form-group">
+    <%= f.input :end_time, class: 'form-control', as: :time, :minute_step => 15 %>
+  </div>
+
+    <div class="form-group">
+      <%= f.submit "Book", class: "btn" %>
+    </div>
+  <% end %>
+
+</div>
