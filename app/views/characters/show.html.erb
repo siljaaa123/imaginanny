@@ -21,14 +21,14 @@
     <%= render "shared/flashes" %>
     <div>
     <h3>What others people have said about this Imaginanny</h3>
-    <% unless @characterbooking.review.present? %>
       <% @character.bookings.each do |booking| %>
-        <%= booking.review.content %>
+        <% if booking.review.present? %>
+          <%= booking.review.content %>
         <p><%= '⭐️' * booking.review.rating %></p>
+        <% else %>
+          <p>There isn't any reviews for your Imaginanny</p>
+        <% end %>
       <% end %>
-    <% else %>
-        <p>There isn't any reviews for your Imaginanny</p>
-    <% end %>
     </div>
   </div>
 </body>

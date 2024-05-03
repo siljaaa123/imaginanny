@@ -24,8 +24,8 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-    <div class="user-details">
+  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0" data-controller="toggle">
+    <div class="user-details" data-toggle-target="detail">
       <p><%= current_user.first_name  %></p>
       <p><%= current_user.last_name  %></p>
       <p><%= current_user.address %></p>
@@ -33,7 +33,7 @@
       <p><%= current_user.phone_nr  %></p>
       <button class="btn" data-action="click->toggle#fire">Edit</button>
       <% unless @user.character.present?  %>
-        <a href="characters/new"><button class="character_btn">Create Character</button></a>
+        <a href="characters/new"><button class="character-btn">Create Character</button></a>
       <% end %>
     </div>
     <div class="user-change d-none" data-toggle-target="form">
@@ -88,13 +88,13 @@
         </ul>
       </div>
   </div>
-  <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+  <div class="tab-pane fade" id="map-tab-pane" role="tabpanel" aria-labelledby="map-tab" tabindex="0">
     <div>
         <div style="width: 800px; height: 600px;"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-          <%# <%= render 'marker', dashboard: @dashboard %>
+          <%= render 'marker', dashboard: @dashboard %>
         </div>
       </div>
   </div>
