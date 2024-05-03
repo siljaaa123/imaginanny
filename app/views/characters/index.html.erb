@@ -27,7 +27,7 @@
                 <div class="card-body">
                   <h5 class="card-title"><%= character.character_name %></h5>
                   <p class="card-text"><%= character.category %></p>
-                  <p class="card-text"><%= character.description.lines('.').first %></p>
+                  <p class="card-text"><%= character.description.split(/[.!]/).first.strip %></p>
                   <p class="card-text"><%= character.price %></p>
                 <% end %>
                 </div>
