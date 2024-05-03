@@ -5,8 +5,13 @@ class PagesController < ApplicationController
     @random_characters = []
     8.times do
       character = Character.all.sample
-      @random_characters << { character_name: character.character_name, description: character.description.lines('.').first, price: character.price, photo: character.photo.url }
+      @random_characters << {
+        character_name: character.character_name,
+        description: character.description,
+        category: character.category,
+        price: character.price,
+        photo: character.photo.url
+      }
     end
-
   end
 end

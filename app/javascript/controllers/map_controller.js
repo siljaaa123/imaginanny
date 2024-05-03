@@ -16,14 +16,12 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     })
-    
+
     this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl }))
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-
-
   }
 
   #addMarkersToMap() {

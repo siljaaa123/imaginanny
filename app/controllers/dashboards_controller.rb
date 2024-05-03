@@ -14,15 +14,17 @@ class DashboardsController < ApplicationController
     @my_bookings = Booking.where(user: current_user)
 
     # The `geocoded` scope filters only babysitter with coordinates
-    @markers = @bookings.each do |booking|
+
+    @markers = @bookings.map do |booking|
       {
-        lat: booking.character.latitude,
-        lng: booking.character.longitude,
+        lat: booking.user.latitude,
+        lng: booking.user.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: {user: booking.character}),
         marker_html: render_to_string(partial: "marker", locals: {user: booking.character})
       }
     end
   end
+
 
   def profile
     @user = User.find(current_user.id)

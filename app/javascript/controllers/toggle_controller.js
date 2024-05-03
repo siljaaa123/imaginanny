@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="toggle"
 export default class extends Controller {
 
-  static targets = ["detail", "form", "tabInfo", "tabBooking", "tabMap", "tabMyBooking", "btnReview", "formReview"]
+  static targets = ["detail", "form", "btnReview", "formReview"]
 
   fire() {
     this.formTarget.classList.remove("d-none")
