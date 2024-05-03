@@ -6,7 +6,7 @@
 
 <body>
   <div class="container">
-    <h1 class="mt-5 mb-5">New sitter</h1>
+    <h1 class="mt-5 mb-5">Your Imaginanny</h1>
     <div>
       <%= image_tag @character.photo.url, height: 250 %>
       <p>I am <strong><%= @character.character_name %></strong> </p>
@@ -20,13 +20,13 @@
     <%= render "bookings/form", booking: @booking %>
     <%= render "shared/flashes" %>
     <div>
-    <h3>What others people have said about this Imaginanny</h3>
+    <h3>Reviews</h3>
       <% @character.bookings.each do |booking| %>
         <% if booking.review.present? %>
           <%= booking.review.content %>
         <p><%= '⭐️' * booking.review.rating %></p>
         <% else %>
-          <p>There isn't any reviews for your Imaginanny</p>
+          <p>There are no reviews for your Imaginanny</p>
         <% end %>
       <% end %>
     </div>

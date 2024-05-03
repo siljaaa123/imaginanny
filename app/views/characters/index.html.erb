@@ -6,8 +6,8 @@
 
 <body>
   <div class="container">
-    <h1 class="mt-5">Looking for an imaginanny!</h1>
-    <p>Filter your research by category and price.</p>
+    <h1 class="mt-5">All Imaginannys</h1>
+    <p>Filter your search</p>
     <%= simple_form_for :filter, url: characters_path, method: :get do |f| %>
       <%= f.input :category, collection: %w[Villains Disney Pixar Marvel DC Action Books Family] %>
       <%= f.input :max_price, input_html: {placeholder: "Max price"} %>
