@@ -11,13 +11,13 @@
   <h1>My Profile</h1>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">My details</button>
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Details</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">My sittings</button>
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">My Sittings</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">My bookings</button>
+    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Booked Imaginannys</button>
   </li>
   <li class="nav-item" role="presentation">
     <button class="nav-link" id="map-tab" data-bs-toggle="tab" data-bs-target="#map-tab-pane" type="button" role="tab" aria-controls="map-tab-pane" aria-selected="false">Map</button>
@@ -26,9 +26,9 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0" data-controller="toggle">
     <div class="user-details" data-toggle-target="detail">
-      <p class="mt-3"><strong>Firt name: </strong><%= current_user.first_name  %></p>
+      <p class="mt-3"><strong>First name: </strong><%= current_user.first_name  %></p>
       <p><strong>Last name: </strong><%= current_user.last_name  %></p>
-      <p><strong>Address: </strong>A<%= current_user.address %></p>
+      <p><strong>Address: </strong><%= current_user.address %></p>
       <p><strong>Email: </strong><%= current_user.email  %></p>
       <p><strong>Phone number: </strong><%= current_user.phone_nr  %></p>
       <button class="btn" data-action="click->toggle#fire">Edit</button>
@@ -50,11 +50,13 @@
           <% @bookings.each do |booking| %>
           <li>
             <%= booking.date %>
+            <%= booking.start_time %>
+            <%= booking.end_time %>
             <%= booking.character.character_name %>
           </li>
           <% end %>
         <% else %>
-          <p class="booking_txt mt-3">You have no Bookings</p>
+          <p class="booking_txt mt-3">No Bookings</p>
         <% end %>
         </ul>
       </div>
@@ -65,8 +67,15 @@
           <% if @my_bookings.any? %>
             <% @my_bookings.each do |booking| %>
             <li>
-              <%= booking.date %>
               <%= booking.character.character_name %>
+              <%= booking.date.strftime('%b %e') %>
+
+              <%= booking.start_time.strftime("%H:%M") if booking.start_time.present? %>
+              <%= booking.end_time.strftime("%H:%M") if booking.end_time.present? %>
+              <% if booking.date.future? %>
+                <p><%= link_to 'edit', edit_booking_path(booking) %></p>
+                <p><%= link_to 'cancel', booking_path(booking),  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></p>
+              <% end %>
             </li>
             <div class="add-reviews" data-controller="toggle">
               <% if booking.date.past? %>
@@ -85,7 +94,7 @@
             </div>
             <% end %>
           <% else %>
-            <p class="booking_txt mt-3">You have no bookings</p>
+            <p class="booking_txt mt-3">No bookings</p>
           <% end %>
         </ul>
       </div>

@@ -6,8 +6,8 @@
 
 <body>
   <div class="container">
-    <h1 class="mt-5">Looking for an imaginanny!</h1>
-    <p>Filter your research by category and price.</p>
+    <h1 class="mt-5">All Imaginannys</h1>
+    <p>Filter your search</p>
     <%= simple_form_for :filter, url: characters_path, method: :get do |f| %>
       <%= f.input :category, collection: %w[Villains Disney Pixar Marvel DC Action Books Family] %>
       <%= f.input :max_price, input_html: {placeholder: "Max price"} %>
@@ -15,32 +15,37 @@
     <% end %>
 
     <%# Displaying the characters %>
-    <div class="mt-5">
+    </div>
+
+    <div class = "container">
+      <div class ="text">
       <% if @characters.any? %>
         <div class="row">
-            <% @characters.each do |character| %>
-            <div class="col-md-4">
-              <div class="cards mb-4">
-              <div class="card-image">
-              <%= link_to character_path(character), class: "text-decoration-none text-black" do %>
-                <%= image_tag character.photo.url, height: 250 %>
-                <div class="card-body">
-                  <h5 class="card-title"><%= character.character_name %></h5>
-                  <p class="card-text"><%= character.category %></p>
-                  <p class="card-text"><%= character.description.split(/[.!]/).first.strip %></p>
-                  <p class="card-text"><%= character.price %></p>
-                <% end %>
+      <div class="cardContainer">
+      <% @characters.each do |character| %>
+        <%= link_to characters_path(character), class: "card-links" do %>
+          <div class="card col-lg-4">
+            <div class="card-image"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+            <%= image_tag character.photo, height: 250 %>
+            </div> <!-- fin card-image -->
+              <div class="card-description">
+                <p><strong id="name"><td><%= character.character_name %></td></strong></p>
+                <p id="category"><%= character.category %></p>
+                <p id="description"><%= character.description.split(/[.!]/).first.strip %></p>
+                <div id="price">
+                  <p><td><%= character.price %>€/h</td></p>
                 </div>
               </div>
-              </div>
-            </div>
-          <% end %>
-          </div>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
           </div>
       <% else %>
         <h4>No characters found.</h4>
       <% end %>
     </div>
-  </div>
 </body>
 </html>

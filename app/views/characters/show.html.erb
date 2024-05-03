@@ -6,6 +6,7 @@
 
 <body>
   <div class="container">
+
     <h1 class="mt-5 mb-5"><%= @character.character_name %></h1>
     <div class="show_content">
       <div class="show_img">
@@ -25,11 +26,15 @@
           <p><%= @character.price %>€/hour</p>
         </div>
       </div>
+
+   
     </div>
     <%= render "bookings/form", booking: @booking %>
     <%= render "shared/flashes" %>
     <div>
+
     <h3 id="review-title">What others people have said about <%= @character.character_name %></h3>
+
       <% @character.bookings.each do |booking| %>
         <% if booking.review.present? %>
           <%= booking.review.content %>
