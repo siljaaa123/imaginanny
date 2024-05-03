@@ -8,6 +8,7 @@ class PagesController < ApplicationController
       @random_characters << {
         character_name: character.character_name,
         description: character.description,
+        category: character.category,
         price: character.price,
         photo: character.photo.url
       }
