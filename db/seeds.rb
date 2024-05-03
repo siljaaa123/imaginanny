@@ -2,7 +2,7 @@
 
 # Then define file_path
 
-file_path = "../app/assets/images/seeds/"
+file_path = "./app/assets/images/seeds/"
 
 
 require 'open-uri'
