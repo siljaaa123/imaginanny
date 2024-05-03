@@ -1,7 +1,9 @@
 # You need the images folder and its path
 
 # Then define file_path
-file_path = "/Users/Silja/Desktop/"
+
+file_path = "/Users/oceane/Downloads/images/"
+
 
 require 'open-uri'
 
@@ -300,7 +302,7 @@ user_inside_out = User.create!(
 character = Character.new(
   character_name: "The Incredibles Family",
   category: "Family",
-  description: "Meet The Incredibles - Mr. Incredible, Elastigirl, Dash, and Violet! This super family will bring excitement and adventure to your child's life. With their unique superpowers and strong bond, The Incredibles will teach your child the importance of teamwork and family!",
+  description: "Meet The Incredibles - Mr Incredible, Elastigirl, Dash, and Violet! This super family will bring excitement and adventure to your child's life. With their unique superpowers and strong bond, The Incredibles will teach your child the importance of teamwork and family!",
   price: 50,
   user_id: user_incredibles.id
 )
@@ -2187,16 +2189,16 @@ mr_darcy_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
   password_confirmation: "password",
-  first_name: "Mr.",
+  first_name: "Mr",
   last_name: "Darcy",
   phone_nr: Faker::PhoneNumber.phone_number,
   address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.state
 )
 
 character = Character.new(
-  character_name: "Mr. Darcy",
+  character_name: "Mr Darcy",
   category: "Books",
-  description: "Mr. Darcy is a wealthy and proud gentleman, known for his reserved demeanor and initially unfavorable impression on Elizabeth Bennet. Despite his aloofness, he possesses a strong sense of honor and integrity, which eventually wins over Elizabeth's heart.",
+  description: "Mr Darcy is a wealthy and proud gentleman, known for his reserved demeanor and initially unfavorable impression on Elizabeth Bennet. Despite his aloofness, he possesses a strong sense of honor and integrity, which eventually wins over Elizabeth's heart.",
   price: 50,
   user_id: mr_darcy_user.id
 )
@@ -2267,16 +2269,16 @@ mr_rochester_user = User.create!(
   email: Faker::Internet.email,
   password: "password",
   password_confirmation: "password",
-  first_name: "Mr.",
+  first_name: "Mr",
   last_name: "Rochester",
   phone_nr: Faker::PhoneNumber.phone_number,
   address: Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.state
 )
 
 character = Character.new(
-  character_name: "Mr. Rochester",
+  character_name: "Mr Rochester",
   category: "Books",
-  description: "Mr. Rochester is a brooding and enigmatic gentleman, known for his complex personality and dark secrets. Despite his flaws, he possesses a passionate and sincere love for Jane Eyre, which ultimately leads to their reconciliation and happiness.",
+  description: "Mr Rochester is a brooding and enigmatic gentleman, known for his complex personality and dark secrets. Despite his flaws, he possesses a passionate and sincere love for Jane Eyre, which ultimately leads to their reconciliation and happiness.",
   price: 45,
   user_id: mr_rochester_user.id
 )

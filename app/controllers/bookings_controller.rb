@@ -19,13 +19,14 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking), notice: 'Booking was successfully updated.'
+      redirect_to :dashboard, notice: 'Booking was successfully updated.'
     else
-      render :edit, status: :unprocessable_entity
+      render :dashboard, status: :unprocessable_entity
     end
   end
 
