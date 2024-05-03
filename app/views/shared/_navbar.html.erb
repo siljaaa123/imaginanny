@@ -19,14 +19,14 @@
       <div class="search-bar-container">
         <ul class="navbar-nav">
           <li class="nav-item flex-grow-1">
-              <div class="search-bar p-2 d-flex flex-lg-row">
+              <div class="search-bar p-2 flex-lg-row">
                 <%= form_with url: characters_path, method: :get, class: "d-flex" do %>
                   <%= text_field_tag :query,
                         params[:query],
                         class: "form-control",
                         placeholder: "Find your imaginanny"
                     %>
-                  <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+                  <%= submit_tag "Search", name: "", class: "btn btn-primary", id: "search-btn" %>
                 <% end %>
               </div>
             </li>

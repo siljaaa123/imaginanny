@@ -1,19 +1,35 @@
 footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   background-color: white;
   padding: 8px 0;
   margin-top: 60px;
   font-family: $body-font;
+
+  .footer-container {
+    margin: 40px;
+  }
+}
+
+.text{
+
+  ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    li{
+      padding-left: 24px
+    }
+  }
 }
 
 .card { background-color: white;
   border-style: none;
 }
 
-.container {
-  width: 1170px;
-
-
-}
 
 .page-container {
   display: grid;
@@ -21,11 +37,6 @@ footer {
   grid-template-rows: auto 1fr auto;
 }
 
-footer ul {
-  margin-top: 10px;
-  list-style-type: none
-
-}
 
 .list-inline {
   padding-left: 0;
@@ -33,18 +44,43 @@ footer ul {
   list-style: none;
 }
 
-footer p {
-  margin-top: 17px;
+
+footer{
+  ul {
+    margin-top: 10px;
+    list-style-type: none;
+  }
+
+  p {
+    margin-top: 17px;
+  }
+
+  .link {
+    color: $black;
+    transition: color 0.5s ease;
+    text-decoration: none;
+
+
+    &:hover {
+      color: $light-gray;
+      border-bottom: 2px solid $light-gray;
+      padding-bottom: 8px;
+    }
+  }
+
+  i{
+    color: $black;
+    transition: color 0.5s ease;
+    text-decoration: none;
+
+
+    &:hover {
+      color: $light-gray;
+    }
+  }
+
 }
 
-footer a {
-  color: black;
-  transition: color 0.5s ease;
-}
-
-footer a:hover {
-  color: #C7F0BD;
-}
 
 p {
 margin: 0 0 10px;
