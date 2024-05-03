@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @random_characters = []
-    8.times do
+    9.times do
       character = Character.all.sample
       @random_characters << {
         character_name: character.character_name,
