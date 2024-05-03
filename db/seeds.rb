@@ -1,7 +1,7 @@
 # You need the images folder and its path
 
 # Then define file_path
-file_path = "/Users/mariadelmarsevillaescobar/Desktop/images/"
+file_path = "/Users/Silja/Desktop/"
 
 require 'open-uri'
 
