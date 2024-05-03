@@ -24,8 +24,8 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-    <div class="user-details">
+  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0" data-controller="toggle">
+    <div class="user-details" data-toggle-target="detail">
       <p class="mt-3"><strong>Firt name: </strong><%= current_user.first_name  %></p>
       <p><strong>Last name: </strong><%= current_user.last_name  %></p>
       <p><strong>Address: </strong>A<%= current_user.address %></p>
@@ -62,29 +62,31 @@
   <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
     <div>
         <ul>
-        <% if @my_bookings.any? %>
-          <% @my_bookings.each do |booking| %>
-          <li>
-            <%= booking.date %>
-            <%= booking.character.character_name %>
-          </li>
-          <% if booking.date.past? %>
-            <div class="add-reviews" data-action="click->toggle#review">
-            <button class="btn" data-toggle-target="btnReview">Leave a review for your imaginanny</button>
-            <div class="d-none" data-toggle-target="formReview">
-              <%= simple_form_for [booking, Review.new] do |f| %>
-                <%= f.input :content %>
-                <%= f.input :rating %>
-                <%= f.button :submit, "Review your Imaginanny", class: "btn" %>
-                <%= render "shared/flashes" %>
+          <% if @my_bookings.any? %>
+            <% @my_bookings.each do |booking| %>
+            <li>
+              <%= booking.date %>
+              <%= booking.character.character_name %>
+            </li>
+            <div class="add-reviews" data-controller="toggle">
+              <% if booking.date.past? %>
+                <div data-toggle-target="btnReview">
+                  <button class="btn" data-action="click->toggle#review">Leave a review for your imaginanny</button>
+                </div>
+                <div class="d-none" data-toggle-target="formReview">
+                  <%= simple_form_for [booking, Review.new] do |f| %>
+                    <%= f.input :content %>
+                    <%= f.input :rating %>
+                    <%= f.button :submit, "Review your Imaginanny", class: "btn" %>
+                    <%= render "shared/flashes" %>
+                  <% end %>
+                </div>
               <% end %>
             </div>
-            </div>
+            <% end %>
+          <% else %>
+            <p class="booking_txt mt-3">You have no bookings</p>
           <% end %>
-          <% end %>
-        <% else %>
-          <p class="booking_txt mt-3">You have no bookings</p>
-        <% end %>
         </ul>
       </div>
   </div>
