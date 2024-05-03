@@ -1,18 +1,22 @@
 h1 {
   font-family: $headers-font;
   font-size: 60px;
+  margin-bottom: 20px;
 }
 
 .btn {
-  background-color: $viridian;
-  font-family: $body-font;
-  color: white;
+    border-radius: 24px; /* Add border-radius for button */
+    padding: 5px 10px;
+    background-color: $black;
+    font-size: 14px; /* Adjust padding as needed */
+    transition: 0.3s;
+    color: white;
 }
 
 .btn:hover {
-  background-color: $tea;
-  font-family: $body-font;
-  color: black;
+    color: $black;
+    background-color: $white;
+    border: 1px solid $black;
 }
 .character_btn{
   background-color: $viridian;
@@ -60,6 +64,7 @@ p {
 .profile-image img {
   width: 100%;
   border-radius: 30px;
+  margin-left: 40px;
 }
 
 .description_container {
@@ -114,4 +119,9 @@ p {
 
 .container {
   width: 100%;
+}
+
+.nav-item {
+  font-family: $body-font;
+  color: black;
 }

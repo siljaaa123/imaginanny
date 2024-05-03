@@ -24,16 +24,16 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0" data-controller="toggle">
-    <div class="user-details" data-toggle-target="detail">
-      <p><%= current_user.first_name  %></p>
-      <p><%= current_user.last_name  %></p>
-      <p><%= current_user.address %></p>
-      <p><%= current_user.email  %></p>
-      <p><%= current_user.phone_nr  %></p>
+  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+    <div class="user-details">
+      <p class="mt-3"><strong>Firt name: </strong><%= current_user.first_name  %></p>
+      <p><strong>Last name: </strong><%= current_user.last_name  %></p>
+      <p><strong>Address: </strong>A<%= current_user.address %></p>
+      <p><strong>Email: </strong><%= current_user.email  %></p>
+      <p><strong>Phone number: </strong><%= current_user.phone_nr  %></p>
       <button class="btn" data-action="click->toggle#fire">Edit</button>
       <% unless @user.character.present?  %>
-        <a href="characters/new"><button class="character-btn">Create Character</button></a>
+        <a href="characters/new"><button class="btn">Create Character</button></a>
       <% end %>
     </div>
     <div class="user-change d-none" data-toggle-target="form">
@@ -54,7 +54,7 @@
           </li>
           <% end %>
         <% else %>
-          <p class="booking_txt">You have no Bookings</p>
+          <p class="booking_txt mt-3">You have no Bookings</p>
         <% end %>
         </ul>
       </div>
@@ -83,7 +83,7 @@
           <% end %>
           <% end %>
         <% else %>
-          <p class="booking_txt">You have no bookings</p>
+          <p class="booking_txt mt-3">You have no bookings</p>
         <% end %>
         </ul>
       </div>
