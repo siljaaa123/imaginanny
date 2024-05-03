@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :characters, only: %i[new create index show] do
-    resources :bookings, except: %i[index show]
+    resources :bookings, only: %i[create]
   end
 
-  resources :bookings, except: %i[index show] do
-    resources :reviews, only: %i[new create]
+  resources :bookings, only: %i[destroy edit update] do
+    resources :reviews, only: %i[create]
   end
   devise_for :users
   root to: "pages#home"

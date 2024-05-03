@@ -31,6 +31,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
+    redirect_to dashboard_path, status: :see_other
   end
 
   private
@@ -48,6 +49,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :character_id, :user_id)
+    params.require(:booking).permit(:date, :character_id, :user_id, :start_time, :end_time)
   end
 end
