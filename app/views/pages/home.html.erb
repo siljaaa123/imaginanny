@@ -38,17 +38,19 @@
             <%= image_tag character[:photo], height: 250 %>
             </div> <!-- fin card-image -->
               <div class="card-description">
-                       <p><strong id="name"><td><%= character[:character_name]%></td></strong></p>
-                <p><td><%= character[:price]%></td></p>
+                <p><strong id="name"><td><%= character[:character_name]%></td></strong></p>
+                <p id="category"><%= character[:category] %></p>
+                <p><%= character[:description].split(/[.!]/).first.strip %></p>
+                <div id="price">
+                  <p><td><%= character[:price]%>€/h</td></p>
+                </div>
               </div>
-              <div class="card-price">
-              </div>
-
-            </div>
- <% end %>
-            </div>
-</div>
-</div>
+            <div class="card-price">
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 <!-- Your main content for the home page goes here -->
 </body>
