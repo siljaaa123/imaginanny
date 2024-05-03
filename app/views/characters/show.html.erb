@@ -27,7 +27,7 @@
         </div>
       </div>
 
-   
+
     </div>
     <%= render "bookings/form", booking: @booking %>
     <%= render "shared/flashes" %>
@@ -37,8 +37,8 @@
 
       <% @character.bookings.each do |booking| %>
         <% if booking.review.present? %>
-          <%= booking.review.content %>
-        <p><%= '⭐️' * booking.review.rating %></p>
+          <p><%= booking.review.content %></p>
+          <p><%= '⭐️' * booking.review.rating %></p>
         <% else %>
           <p>There isn't any reviews about <%= @character.character_name %></p>
         <% end %>
