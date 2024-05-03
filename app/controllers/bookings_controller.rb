@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_user, only: %i[new create]
-  before_action :set_character, only: %i[new create edit update]
+  before_action :set_character, only: %i[new create]
   before_action :set_booking, only: %i[destroy edit update]
 
   def new

@@ -11,6 +11,16 @@ h1 {
     font-size: 14px; /* Adjust padding as needed */
     transition: 0.3s;
     color: white;
+    text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: black;
 }
 
 .btn:hover {
@@ -127,4 +137,8 @@ p {
 
 .content-container {
   margin: 30px;
+}
+
+.bookings {
+  margin-top: 30px;
 }
