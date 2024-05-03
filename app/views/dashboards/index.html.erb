@@ -47,10 +47,12 @@
     <div class="tab-bookings">
         <% if @bookings.any? %>
           <% @bookings.each do |booking| %>
-            <%= booking.date %>
-            <%= booking.start_time %>
-            <%= booking.end_time %>
-            <%= booking.character.character_name %>
+
+              <p class="mt-5"><strong><%= booking.character.character_name %></strong></p>
+              <p>Date: <strong><%= booking.date.strftime('%b %e') %></strong></p>
+
+              <p>Start time: <strong><%= booking.start_time.strftime("%H:%M") if booking.start_time.present? %></strong></p>
+              <p>End time: <strong><%= booking.end_time.strftime("%H:%M") if booking.end_time.present? %></strong></p>
           <% end %>
         <% else %>
           <p class="booking_txt mt-3">No Bookings</p>
