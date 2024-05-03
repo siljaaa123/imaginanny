@@ -6,27 +6,41 @@
 
 <body>
   <div class="container">
-    <h1 class="mt-5 mb-5">Your Imaginanny</h1>
-    <div>
-      <%= image_tag @character.photo.url, height: 250 %>
-      <p>I am <strong><%= @character.character_name %></strong> </p>
-      <p><strong>Description: </strong></p>
-      <p><%= @character.description %></p>
-      <p><strong>Category:</strong></p>
-      <p><%= @character.category %></p>
-      <p><strong>Price:</strong></p>
-      <p><%= @character.price %>€/hour</p>
+
+    <h1 class="mt-5 mb-5"><%= @character.character_name %></h1>
+    <div class="show_content">
+      <div class="show_img">
+        <%= image_tag @character.photo.url%>
+      </div>
+      <div class="description">
+        <div>
+          <p><strong>Description: </strong></p>
+          <p><%= @character.description %></p>
+        </div>
+        <div>
+          <p><strong>Category:</strong></p>
+          <p><%= @character.category %></p>
+        </div>
+        <div>
+          <p><strong>Price:</strong></p>
+          <p><%= @character.price %>€/hour</p>
+        </div>
+      </div>
+
+   
     </div>
     <%= render "bookings/form", booking: @booking %>
     <%= render "shared/flashes" %>
     <div>
-    <h3>Reviews</h3>
+
+    <h3 id="review-title">What others people have said about <%= @character.character_name %></h3>
+
       <% @character.bookings.each do |booking| %>
         <% if booking.review.present? %>
           <%= booking.review.content %>
         <p><%= '⭐️' * booking.review.rating %></p>
         <% else %>
-          <p>There are no reviews for your Imaginanny</p>
+          <p>There isn't any reviews about <%= @character.character_name %></p>
         <% end %>
       <% end %>
     </div>

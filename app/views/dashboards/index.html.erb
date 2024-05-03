@@ -45,38 +45,34 @@
   </div>
   <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
     <div class="tab-bookings">
-        <ul>
         <% if @bookings.any? %>
           <% @bookings.each do |booking| %>
-          <li>
             <%= booking.date %>
             <%= booking.start_time %>
             <%= booking.end_time %>
             <%= booking.character.character_name %>
-          </li>
           <% end %>
         <% else %>
           <p class="booking_txt mt-3">No Bookings</p>
         <% end %>
-        </ul>
       </div>
   </div>
   <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-    <div>
-        <ul>
+    <div class="bookings">
+
           <% if @my_bookings.any? %>
             <% @my_bookings.each do |booking| %>
-            <li>
-              <%= booking.character.character_name %>
-              <%= booking.date.strftime('%b %e') %>
 
-              <%= booking.start_time.strftime("%H:%M") if booking.start_time.present? %>
-              <%= booking.end_time.strftime("%H:%M") if booking.end_time.present? %>
+              <p class="mt-5"><strong><%= booking.character.character_name %></strong></p>
+              <p>Date: <strong><%= booking.date.strftime('%b %e') %></strong></p>
+
+              <p>Start time: <strong><%= booking.start_time.strftime("%H:%M") if booking.start_time.present? %></strong></p>
+              <p>End time: <strong><%= booking.end_time.strftime("%H:%M") if booking.end_time.present? %></strong></p>
               <% if booking.date.future? %>
-                <p><%= link_to 'edit', edit_booking_path(booking) %></p>
-                <p><%= link_to 'cancel', booking_path(booking),  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></p>
+                <button class="btn"><%= link_to 'edit', edit_booking_path(booking) %></button>
+                <button class="btn"><%= link_to 'cancel', booking_path(booking),  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></button>
               <% end %>
-            </li>
+
             <div class="add-reviews" data-controller="toggle">
               <% if booking.date.past? %>
                 <div data-toggle-target="btnReview">
@@ -96,7 +92,7 @@
           <% else %>
             <p class="booking_txt mt-3">No bookings</p>
           <% end %>
-        </ul>
+
       </div>
   </div>
   <div class="tab-pane fade" id="map-tab-pane" role="tabpanel" aria-labelledby="map-tab" tabindex="0">

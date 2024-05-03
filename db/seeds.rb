@@ -1,7 +1,9 @@
 # You need the images folder and its path
 
 # Then define file_path
+
 file_path = "/Users/oceane/Downloads/images/"
+
 
 require 'open-uri'
 
