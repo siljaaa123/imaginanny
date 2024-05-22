@@ -1,5 +1,6 @@
 .cardContainer {
   display: grid;
+  justify-content: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 50px;
   padding: 1rem;
@@ -73,7 +74,7 @@
 
 }
 
-@media (min-width: 992px) {
+@media (max-width: 1300px) {
   .cardContainer {
     grid-template-columns: 1fr 1fr 1fr;
   }
